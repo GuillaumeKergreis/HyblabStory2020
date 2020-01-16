@@ -1,1 +1,7 @@
 node_modules
+
+# JetBrains
+
+.idea/
+out/
+.idea_modules/
