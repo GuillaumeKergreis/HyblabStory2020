@@ -6,10 +6,9 @@ Sujet :
 
 Nom d'équipe :
 
-Participants : 
+Participants :
 
 - Sciencescom
 
 - AGR :
-- Polytech :  
-
+- Polytech :
