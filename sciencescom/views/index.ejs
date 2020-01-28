@@ -1,0 +1,55 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Hyblab 2020 Auden'story</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="http://darsa.in/sly/css/normalize.css">
+    <link rel="stylesheet" href="http://darsa.in/sly/css/font-awesome.css">
+    <link rel="stylesheet" href="http://darsa.in/sly/css/ospb.css">
+    <link rel="stylesheet" href="http://darsa.in/sly/examples/css/horizontal.css">
+    <script src="http://darsa.in/sly/js/vendor/modernizr.js"></script>
+</head>
+<body>
+<main>
+
+    <div class="wrap" style="width:100%; margin: 0;">
+
+        <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
+            <ul class="clearfix" style="transform: translateZ(0px) translateX(0px); width: 1500%;">
+                <%- include('slides/start.ejs') -%>
+
+                <%- include('slides/period1/introduction.ejs') -%>
+                <%- include('slides/period1/testimony1.ejs') -%>
+                <%- include('slides/period1/testimony2.ejs') -%>
+
+                <%- include('slides/period2/introduction.ejs') -%>
+                <%- include('slides/period2/testimony1.ejs') -%>
+                <%- include('slides/period2/testimony2.ejs') -%>
+
+                <%- include('slides/period3/introduction.ejs') -%>
+                <%- include('slides/period3/testimony1.ejs') -%>
+                <%- include('slides/period3/testimony2.ejs') -%>
+            </ul>
+        </div>
+
+        <div class="scrollbar" style="width:80%; left: 10%; height: 50px; bottom: 80px; position:fixed;">
+            <div class="handle" style="transform: translateZ(0px) translateX(0px); width: 71px;">
+                <div class="mousearea"></div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<footer>
+</footer>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script src="http://darsa.in/sly/examples/js/vendor/plugins.js"></script>
+<script type="text/javascript" src="js/sly.min.js"></script>
+<script src="js/horizontal.js"></script>
+
+</body>
+</html>
