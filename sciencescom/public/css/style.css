@@ -1,3 +1,8 @@
+.slide {
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
 /* ------- Important ! Regardez bien à la fin de ce CSS pour des règles permettant de ----------- */
 /* contraindre le format des slides affichés sur la page web */
 
@@ -136,7 +141,7 @@ section[data-slidr="page-2"]{
 /* ---------- media queries importantes pour le responsive facile :-D ----------------- */
 /* Vous pouvez bien sûr l'adapter pour d'autres ratio que 16:9 */
 
-/* Cette media query permet de s'assurer qu'on remplit toujours la largeur de la fenêtre, 
+/* Cette media query permet de s'assurer qu'on remplit toujours la largeur de la fenêtre,
 tant qu'on est en dessous de l'apect ratio 16/9 */
 @media screen and (max-aspect-ratio: 16/9){
     #container{
@@ -145,14 +150,14 @@ tant qu'on est en dessous de l'apect ratio 16/9 */
         height: calc(100 * 9vw / 16);
     }
 
-    /* On fixe une taille de police par défaut pour le body qui servira de base à toutes 
+    /* On fixe une taille de police par défaut pour le body qui servira de base à toutes
     les autres tailles de police. Celle-ci est proportionelle à la largeur ici. */
     body{
         font-size: 9vw;
     }
 }
 
-/* Cette media query permet de s'assurer qu'on remplit toujours la hauteur de la fenêtre, quand on est au 
+/* Cette media query permet de s'assurer qu'on remplit toujours la hauteur de la fenêtre, quand on est au
 dessus de l'apect ratio 16/9 */
 @media screen and (min-aspect-ratio: 16/9){
     #container{
@@ -161,7 +166,7 @@ dessus de l'apect ratio 16/9 */
         height: 100vh;
     }
 
-    /* On fixe une taille de police par défaut pour le body qui servira de base à toutes 
+    /* On fixe une taille de police par défaut pour le body qui servira de base à toutes
     les autres tailles de police. Celle-ci est proportionelle à la hauteur ici. */
     body{
         font-size: 16vh;
