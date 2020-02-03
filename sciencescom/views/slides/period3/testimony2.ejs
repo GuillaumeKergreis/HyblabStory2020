@@ -1,8 +1,41 @@
 <li class="slide">
-    <h1>2nd témoignage</h1>
-    <button class="next">Passer à la période suivante</button>
-    <button class="prev">Voir le 2nd témoignage</button>
 
-    <img id="textBox9" class="textBox">
-    <span id="textBoxTyped9" class="textBoxTyped"></span>
+    <script type="text/javascript" src="js/map/raphael-min.js"></script>
+    <script type="text/javascript" src="js/map/jquery.mapael.js"></script>
+    <script type="text/javascript" src="js/map/world_countries_miller.js"></script>
+
+    <style type="text/css">
+        .mapael .map {
+            background-color: #ffffff;
+        }
+    </style>
+
+    <div class="container">
+
+        <div class="map">Alternative content</div>
+        <script>
+
+            let frontMapColor = "#002d59";
+
+            $(".container").mapael({
+                map: {
+                    name: "world_countries_miller",
+                    defaultArea: {
+                        attrs: {
+                            fill: frontMapColor,
+                            stroke: frontMapColor
+                        },
+                        attrsHover: {
+                            //enabled: false
+                            fill: frontMapColor
+                        }
+                    }
+                }
+            });
+        </script>
+
+        <h1>2nd témoignage</h1>
+        <button class="next">Passer à la période suivante</button>
+        <button class="prev">Voir le 2nd témoignage</button>
+    </div>
 </li>
