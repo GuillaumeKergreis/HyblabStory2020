@@ -19,6 +19,29 @@ li {
     to {width: 11vw;}
 }
 
+img.persFilleP2{
+    animation: persFilleP2 2s infinite;
+    width: 7.8vw;
+    position: absolute;
+    left: 70vw;
+    bottom: 5vw;
+}
+img.persFilleP2:hover{
+    animation: none;
+    width: 9vw;
+}
+img.persGarconP2{
+    animation: persGarconP2 2s infinite;
+    width: 11vw;
+    position: absolute;
+    left: 57vw;
+    bottom: 5vw;
+}
+img.persGarconP2:hover{
+    animation: none;
+    width: 13vw;
+}
+
 /* ------- Important ! Regardez bien à la fin de ce CSS pour des règles permettant de ----------- */
 /* contraindre le format des slides affichés sur la page web */
 
