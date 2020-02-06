@@ -1,23 +1,104 @@
-<li class="slide">
+<li class="slide" id="carteInteractive">
 
     <script type="text/javascript" src="js/map/raphael-min.js"></script>
+    <script type="text/javascript" src="js/map/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="js/map/jquery.mapael.js"></script>
     <script type="text/javascript" src="js/map/world_countries_miller.js"></script>
 
     <style type="text/css">
+        :root {
+            --map-bg-color: #ffffff;
+            --map-fg-color: #002d59;
+            --map-dot-color: #e83368;
+        }
+
+        body {
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        #carteInteractive {
+            background-color: var(--map-bg-color);
+        }
+
+        .p3-t2-container {
+            position: relative;
+            height: 100vh;
+        }
+
+        .mapContainer {
+            margin: 10px;
+            height: fit-content;
+            width: fit-content;
+        }
+
         .mapael .map {
-            background-color: #ffffff;
+            position: relative;
+            height: 100vh;
+        }
+
+        /*.mapael .mapTooltip {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background-color: yellow;
+            moz-opacity: 0.70;
+            opacity: 0.70;
+            filter: alpha(opacity=70);
+            border-radius: 10px;
+            padding: 10px;
+            z-index: 1000;
+            max-height: 30vw;
+            max-width: 15vw;
+            display: none;
+            color: red; /* couleur du texte *//*
+        }*/
+
+        /*.tooltipContainer {
+            position: absolute;
+            background-color: var(--map-bg-color);
+            height: 37vh;
+            width: 18vw;
+            bottom: 4vh;
+            left: 2vw;
+            z-index: 998;
+        }*/
+
+        .tooltipContainer {
+            position: absolute;
+            height: 40vh;
+            width: 18vw;
+            bottom: 2vh;
+            left: 1vw;
+            z-index: 999;
+            background-color: var(--map-bg-color);
+            vertical-align: middle;
+        }
+
+        .tooltip {
+            position: relative;
+            max-height: inherit;
+            max-width: inherit;
+            height: 20vh;
+            width: 9vw;
+            border-style: solid;
+            border-radius: 50px;
+            border-width: 10px;
+            border-color: var(--map-dot-color);
+            z-index: 999;
+            background-color: var(--map-bg-color);
+            color: var(--map-fg-color);
+            margin: 0 auto;
         }
     </style>
 
-    <div class="container">
+    <script>
 
-        <div class="map">Alternative content</div>
-        <script>
+        let backMapColor = getComputedStyle(document.documentElement).getPropertyValue("--map-bg-color");
+        let frontMapColor = getComputedStyle(document.documentElement).getPropertyValue("--map-fg-color");
+        let frontDotColor = getComputedStyle(document.documentElement).getPropertyValue("--map-dot-color");
 
-            let frontMapColor = "#002d59";
-
-            $(".container").mapael({
+        $(document).ready(function () {
+            $(".p3-t2-container").mapael({
                 map: {
                     name: "world_countries_miller",
                     defaultArea: {
@@ -26,16 +107,57 @@
                             stroke: frontMapColor
                         },
                         attrsHover: {
-                            //enabled: false
                             fill: frontMapColor
                         }
+                    },
+                    defaultPlot: {
+                        attrs: {
+                            fill: frontDotColor
+                        }
+                    }
+                },
+                plots: {
+                    'C-Paris': {
+                        size: 10,
+                        latitude: 48.8534,
+                        longitude: 2.3488,
+                        text: {content: "Paris"},
+                        tooltip: {content: "<span style=\"font-weight:bold;\">Shenzhen</span><br />Population : 10"}
+                    },
+                    'C-Shenzhen': {
+                        size: 10,
+                        latitude: 22.54554,
+                        longitude: 114.0683,
+                        text: {content: "Shenzhen"},
+                        tooltip: {content: "<span style=\"font-weight:bold;\">Shenzhen</span><br />Population : 10"}
                     }
                 }
             });
-        </script>
+        });
 
-        <h1>2nd témoignage</h1>
-        <button class="next">Passer à la période suivante</button>
-        <button class="prev">Voir le 2nd témoignage</button>
+        $("circle").click(function () {
+            // access data: $(this).attr("data-id")
+        })
+    </script>
+
+    <div class="p3-t2-container">
+
+        <div class="mapContainer">
+            <div class="map">
+                <span>Alternative content</span>
+            </div>
+        </div>
+
+        <div class="tooltipContainer">
+            <div class="tooltip">
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+            </div>
+        </div>
+
+        <!--<div class="buttonContainer">
+            <button class="next buttonMap">Passer à la période suivante</button>
+            <button class="prev buttonMap">Voir le 2nd témoignage</button>
+        </div>-->
     </div>
 </li>

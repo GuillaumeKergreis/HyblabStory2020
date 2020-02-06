@@ -1,0 +1,13 @@
+[
+    {
+        "ville": "Bruxelles",
+        "pays": "Belgique",
+        "coordonnees": {
+            "longitude": 48.8534,
+            "latitude": 2.3488
+        },
+        "type": "Accréditation",
+        "date": 1998,
+        "description": "Obtention du label EQUIS (signification)"
+    }
+]
