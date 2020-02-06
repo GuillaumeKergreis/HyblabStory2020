@@ -126,7 +126,12 @@
                         latitude: 48.8534,
                         longitude: 2.3488,
                         text: {content: "Paris"},
-                        tooltip: {content: "<span style=\"font-weight:bold;\">Shenzhen</span><br />Population : 10"}
+                        tooltip: {content: "<span style=\"font-weight:bold;\">Shenzhen</span><br />Population : 10"},
+                        eventHandlers: {
+                            click: function (e, id, mapElem, textElem) {
+                                alert("OK");
+                            }
+                        }
                     },
                     'C-Shenzhen': {
                         size: 10,
@@ -139,10 +144,17 @@
             });
         });
 
-        $("circle").click(function () {
+
+//Ne sert potentiellement a rien finalement
+        $("circle").click()
+        /*click(function (event) {
+            alert("OK");
             console.log("aaa");
             // access data: $(this).attr("data-id")
-        })
+        })*/
+
+
+
     </script>
 
     <div class="p3-t2-container">
