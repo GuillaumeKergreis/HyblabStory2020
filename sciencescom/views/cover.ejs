@@ -1,0 +1,48 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hyblab 2020 Auden'story</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/sly.min.js"></script>
+    <script src="js/plugins.js"></script>
+</head>
+
+<body>
+    <div class="frame oneperframe" id="oneperframe">
+        <ul class="clearfix">
+
+            <li class="cover-slide" id="firstpage-slide" style="line-height: 100%;">
+                <img src="img/cover/NEVER_STOP_DARING.png" id="never-stop-daring" class="horizontal-center" />
+
+                <div id="bottompart" class="horizontal-center">
+                    <h2 class="indication">Découvre Audencia à travers son histoire</h2>
+                    <div id="mouse-scroll-tip">
+                        <img src="img/cover/bouton_scroll_rose.png">
+                        <p>Défilez vers le bas pour avancer</p>
+                    </div>
+                </div>
+            </li>
+
+            <%- include('slides/start.ejs') -%>
+        </ul>
+    </div>
+
+    <div id="logos">
+        <img src="img/logo/logo_audencia_w.png" class="logo" />
+        <div class="logo-separator"></div>
+        <img src="img/logo/logo_120_w.png" class="logo" />
+    </div>
+</body>
+
+
+<script src="js/cover.js"></script>
+
+</html>
