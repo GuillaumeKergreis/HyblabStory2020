@@ -1,6 +1,11 @@
 .slide {
     width: 100vw !important;
     height: 100vh !important;
+    position: relative;
+}
+
+.slide * {
+    position: absolute;
 }
 
 li {
