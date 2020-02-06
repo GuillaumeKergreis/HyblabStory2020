@@ -106,9 +106,18 @@ function speak(personne, slide, paragraph= 0) {
     if (![2, 3].includes(slide)) {
         if (slide === 1) {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_1;
-        } else if ([4, 5, 6].includes(slide) && personne === 'Emma') {
+        } else if ([4, 5, 6, "4", "5", "6"].includes(slide) && personne === 'Emma') {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_2;
-        } else document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue;
+            document.getElementById('textBox' + slide).style.width = '26vw';
+            document.getElementById('textBox' + slide).style.left = '4vw';
+        } else if(personne === 'Alain'){
+            document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue;
+            document.getElementById('textBox' + slide).style.width = '28vw';
+            document.getElementById('textBox' + slide).style.left = '2vw';
+        } else {
+            document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue;
+            document.getElementById('textBox' + slide).removeAttribute("style");
+        }
 
 
         let options = {
