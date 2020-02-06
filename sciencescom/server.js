@@ -14,7 +14,11 @@ app.set('views', path.join(__dirname, '/views'));
 
 app.set('view engine', 'ejs');
 
-app.use('/', (req, res, next) => res.render('index'));
+
+app.use('/story', (req, res, next) => res.render('story'));
+
+
+app.use('/', (req, res, next) => res.render('cover'));
 
 // You can then add whatever routing code you need
 
