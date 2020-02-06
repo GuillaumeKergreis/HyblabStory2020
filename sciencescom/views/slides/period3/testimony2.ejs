@@ -27,8 +27,8 @@
 
         .mapContainer {
             margin: 10px;
-            height: 100vh;
-            width: 100vw;
+            height: content-box;
+            width: content-box;
         }
 
         .mapael .map {
@@ -66,7 +66,9 @@
         .tooltipContainer {
             position: absolute;
             height: 40vh;
+            max-height: 40vh;
             width: 18vw;
+            max-width: 18vw;
             bottom: 2vh;
             left: 1vw;
             z-index: 999;
@@ -76,10 +78,11 @@
 
         .tooltip {
             position: relative;
-            max-height: inherit;
-            max-width: inherit;
-            height: 20vh;
-            width: 9vw;
+            padding: 0;
+            display: inline-block;
+            margin: auto;
+            overflow: hidden;
+            line-height: normal;
             border-style: solid;
             border-radius: 50px;
             border-width: 10px;
@@ -87,7 +90,8 @@
             z-index: 999;
             background-color: var(--map-bg-color);
             color: var(--map-fg-color);
-            margin: 0 auto;
+            max-width: 17vw;
+            max-height: 38vh;
         }
     </style>
 
@@ -136,6 +140,7 @@
         });
 
         $("circle").click(function () {
+            console.log("aaa");
             // access data: $(this).attr("data-id")
         })
     </script>
@@ -150,8 +155,13 @@
 
         <div class="tooltipContainer">
             <div class="tooltip">
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+                aa aa aa a a aa qsd
+                aaaaaaaaaa
+                aaaaaaaaaa
+                aaaaaaaaaa
+                aaaaaaaaaa
+                aaaaaaaaaa
+                aaaaaaaaaa
             </div>
         </div>
 
