@@ -1,14 +1,23 @@
 # Descriptif du projet
 
-Porteur de projet :
+Porteur de projet : **Audencia Sciencescom**
 
-Sujet :
+Sujet : **Les 120 ans d'Audencia**
 
-Nom d'équipe :
+Nom d'équipe : **Audens'Story**
 
 Participants :
 
-- Sciencescom
-
+- Sciencescom :
+    - Karuk ELICE
+    - Isabelle TYLEK
 - AGR :
+    - Aubin MAURIER
+    - Aurélie BREGEON
 - Polytech :
+    - Guillaume KERGREIS
+    - Florian PATEROUR
+    - Valentin DUMONT
+    - Jérémy ANGORA
+    - Alexandre ROUCHOUZE
+

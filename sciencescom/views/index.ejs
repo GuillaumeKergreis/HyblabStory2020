@@ -1,55 +1,60 @@
 <!doctype html>
 
 <html lang="fr">
-<head>
-    <meta charset="utf-8">
-    <title>Hyblab 2020 Auden'story</title>
-    <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="http://darsa.in/sly/css/normalize.css">
-    <link rel="stylesheet" href="http://darsa.in/sly/css/font-awesome.css">
-    <link rel="stylesheet" href="http://darsa.in/sly/css/ospb.css">
-    <link rel="stylesheet" href="http://darsa.in/sly/examples/css/horizontal.css">
-    <script src="http://darsa.in/sly/js/vendor/modernizr.js"></script>
-</head>
-<body>
-<main>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-    <div class="wrap" style="width:100%; margin: 0;">
+        <title>Hyblab 2020 Auden'story</title>
 
-        <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
-            <ul class="clearfix" style="transform: translateZ(0px) translateX(0px); width: 1500%;">
-                <%- include('slides/start.ejs') -%>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/ospb.css">
+        <link rel="stylesheet" href="css/horizontal.css">
+        <script type="text/javascript" src="js/modernizr.js"></script>
+    </head>
+    <body>
 
-                <%- include('slides/period1/introduction.ejs') -%>
-                <%- include('slides/period1/testimony1.ejs') -%>
-                <%- include('slides/period1/testimony2.ejs') -%>
+        <main>
 
-                <%- include('slides/period2/introduction.ejs') -%>
-                <%- include('slides/period2/testimony1.ejs') -%>
-                <%- include('slides/period2/testimony2.ejs') -%>
+            <div class="wrap" style="width:100%; margin: 0;">
 
-                <%- include('slides/period3/introduction.ejs') -%>
-                <%- include('slides/period3/testimony1.ejs') -%>
-                <%- include('slides/period3/testimony2.ejs') -%>
-            </ul>
-        </div>
+                <img src="img/logo/LOGO_2018_1.png" style="position: fixed; left: 0; top:0; width:200px; z-index:20">
+                <img src="img/logo/120_ANS_QUAD.png" style="position: fixed; left: 50px; top:100px; width:100px; z-index:20">
 
-        <div class="scrollbar" style="width:80%; left: 10%; height: 50px; bottom: 80px; position:fixed;">
-            <div class="handle" style="transform: translateZ(0px) translateX(0px); width: 71px;">
-                <div class="mousearea"></div>
+                <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
+                    <ul class="clearfix" style="transform: translateZ(0px) translateX(0px); width: 1500%;">
+                        <%- include('slides/start.ejs') -%>
+
+                        <%- include('slides/period1/introduction.ejs') -%>
+                        <%- include('slides/period1/testimony1.ejs') -%>
+                        <%- include('slides/period1/testimony2.ejs') -%>
+
+                        <%- include('slides/period2/introduction.ejs') -%>
+                        <%- include('slides/period2/testimony1.ejs') -%>
+                        <%- include('slides/period2/testimony2.ejs') -%>
+
+                        <%- include('slides/period3/introduction.ejs') -%>
+                        <%- include('slides/period3/testimony1.ejs') -%>
+                        <%- include('slides/period3/testimony2.ejs') -%>
+                    </ul>
+                </div>
+
+                <div class="scrollbar" style="width:80%; left: 10%; height: 50px; bottom: 80px; position:fixed;">
+                    <div class="handle" style="transform: translateZ(0px) translateX(0px); width: 71px;">
+                        <div class="mousearea"></div>
+                    </div>
+                </div>
+
             </div>
-        </div>
 
-    </div>
+        </main>
 
-</main>
-<footer>
-</footer>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script src="http://darsa.in/sly/examples/js/vendor/plugins.js"></script>
-<script type="text/javascript" src="js/sly.min.js"></script>
-<script src="js/horizontal.js"></script>
-
-</body>
+        <script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/plugins.js"></script>
+        <script type="text/javascript" src="js/sly.min.js"></script>
+        <script type="text/javascript" src="js/horizontal.js"></script>
+    </body>
 </html>
