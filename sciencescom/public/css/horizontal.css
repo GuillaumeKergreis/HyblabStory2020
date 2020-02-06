@@ -26,13 +26,13 @@ body { background: #e8e8e8; }
     height: 100%;
     margin: 0 1px 0 0;
     padding: 0;
-    background: #333;
-    color: #ddd;
+    background: white;
+    color: blue;
     text-align: center;
     cursor: pointer;
 }
 .frame ul li.active {
-    color: #fff;
+    color: blue;
     background: #a03232;
 }
 
@@ -89,7 +89,7 @@ body { background: #e8e8e8; }
 /* One Item Per Frame example*/
 .oneperframe { height: 300px; line-height: 300px; }
 .oneperframe ul li { width: 1140px; }
-.oneperframe ul li.active { background: #333; }
+.oneperframe ul li.active { background: white; }
 
 /* Crazy example */
 .crazy ul li:nth-child(2n) { width: 100px; margin: 0 4px 0 20px; }
