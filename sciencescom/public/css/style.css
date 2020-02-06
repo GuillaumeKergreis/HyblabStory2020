@@ -7,6 +7,18 @@ li {
     background-color: white !important;
 }
 
+@keyframes persFilleP2 {
+    from {width: 7.8vw}
+    50% {width: 8.2vw}
+    to {width: 7.8vw}
+}
+
+@keyframes persGarconP2 {
+    from {width: 11vw;}
+    50% {width: 11.4vw}
+    to {width: 11vw;}
+}
+
 /* ------- Important ! Regardez bien à la fin de ce CSS pour des règles permettant de ----------- */
 /* contraindre le format des slides affichés sur la page web */
 
