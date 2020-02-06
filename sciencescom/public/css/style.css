@@ -3,6 +3,10 @@
     height: 100vh !important;
 }
 
+li {
+    background-color: white !important;
+}
+
 /* ------- Important ! Regardez bien à la fin de ce CSS pour des règles permettant de ----------- */
 /* contraindre le format des slides affichés sur la page web */
 
