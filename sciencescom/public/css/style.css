@@ -13,7 +13,7 @@
 
 .wrap {
     position: relative;
-    width:100%;
+    width: 100%;
     margin: 0;
 }
 
@@ -59,11 +59,8 @@
 .slide {
     width: 100vw !important;
     height: 100vh !important;
-    float: left;
-    margin: 0 1px 0 0;
-    padding: 0;
+    margin: 0 !important;
     background-color: white !important;
-    color: #ddd;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -80,36 +77,51 @@
 }
 
 @keyframes persFilleP2 {
-    from {width: 7.8vw}
-    50% {width: 8.2vw}
-    to {width: 7.8vw}
+    from {
+        width: 7.8vw
+    }
+    50% {
+        width: 8.2vw
+    }
+    to {
+        width: 7.8vw
+    }
 }
 
 @keyframes persGarconP2 {
-    from {width: 11vw;}
-    50% {width: 11.3vw}
-    to {width: 11vw;}
+    from {
+        width: 11vw;
+    }
+    50% {
+        width: 11.3vw
+    }
+    to {
+        width: 11vw;
+    }
 }
 
-img.persFilleP2{
+img.persFilleP2 {
     animation: persFilleP2 2s infinite;
     width: 7.8vw;
     position: absolute;
     left: 70vw;
     bottom: 5vw;
 }
-img.persFilleP2:hover{
+
+img.persFilleP2:hover {
     animation: none;
     width: 9vw;
 }
-img.persGarconP2{
+
+img.persGarconP2 {
     animation: persGarconP2 2s infinite;
     width: 11vw;
     position: absolute;
     left: 57vw;
     bottom: 5vw;
 }
-img.persGarconP2:hover{
+
+img.persGarconP2:hover {
     animation: none;
     width: 13vw;
 }
@@ -143,24 +155,11 @@ img.persGarconP2:hover{
     background: #333;
 }
 
-.slide {
-    width: 100vw !important;
-    height: 100vh !important;
-}
-
 body {
     background-color: black;
     color: white;
     overflow: hidden;
-    /* pour slidr dans certains navigateurs */
 }
-
-#container {
-    position: relative;
-    /* pour permettre le positionnement en absolu des autres éléments */
-}
-
-
 
 /* Scrollbar */
 
@@ -191,37 +190,6 @@ body {
     height: 20px;
 }
 
-/* Pages */
-
-.pages {
-    list-style: none;
-    margin: 20px 0;
-    padding: 0;
-    text-align: center;
-}
-
-.pages li {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin: 0 4px;
-    text-indent: -999px;
-    border-radius: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    background: #fff;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
-}
-
-.pages li:hover {
-    background: #aaa;
-}
-
-.pages li.active {
-    background: #666;
-}
-
-
 /* Cover */
 #firstpage-slide {
     background-color: #002B5B;
@@ -233,15 +201,15 @@ body {
     top: 15vh
 }
 
-#bottompart{
+#bottompart {
     position: absolute;
     bottom: 104vh;
 }
 
 .indication {
-    font-family: Avenir;
+    font-family: Avenir, sans-serif;
     color: white;
-    font-size: 30;
+    font-size: 30px;
     line-height: normal;
 }
 
@@ -251,8 +219,38 @@ body {
 }
 
 #mouse-scroll-tip p {
-    font-family: Avenir;
-    font-size: 13;
+    font-family: Avenir, sans-serif;
+    font-size: 13px;
     margin-top: 15px;
     color: #DD4C73;
+}
+
+@keyframes opacityOn {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* TextBox */
+
+.textBox {
+    width: 25vw;
+    left: 5vw;
+    bottom: 15vh;
+}
+
+.textBoxTyped {
+    width: 15vw;
+    height: 0;
+    left: 14.5vw;
+    bottom: 15vh;
+    margin-bottom:7vw;
+    color: black;
+    line-height: normal;
+    font-size: 1.2vw;
+    text-align: left;
+}
+
+.typed-cursor {
+    display: none;
 }

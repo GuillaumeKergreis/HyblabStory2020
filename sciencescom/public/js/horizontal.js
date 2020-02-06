@@ -50,6 +50,7 @@ jQuery(function($){
                         touchDragging: 1,
                     });
                 }
+                launchSpeech(index);
             }
             }
         );
@@ -70,3 +71,68 @@ jQuery(function($){
 
     }());
 });
+
+
+/**
+ * Launch the text for the slide associated to the index
+ * @param {int} index
+ */
+function launchSpeech(index) {
+    index = parseInt(index);
+    switch(index) {
+        case 2:
+            break;
+        case 3:
+            break;
+        case 5:
+            speak('Pablo', index);
+            break;
+        case 6:
+            speak('Pablo', index);
+            break;
+        default:
+            speak('Emma', index);
+            break;
+    }
+}
+
+/**
+ *
+ * @param personne
+ * @param {int} slide
+ * @param {int} paragraph
+ */
+function speak(personne, slide, paragraph= 0) {
+    if (![2, 3].includes(slide)) {
+        if (slide === 1) {
+            document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_1;
+        } else if ([4, 5, 6].includes(slide) && personne === 'Emma') {
+            document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_2;
+        } else document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue;
+
+
+        let options = {
+            strings: Personnage[personne].dialogues[slide][paragraph].texte,
+            typeSpeed: 30
+        };
+
+        if (Personnage[personne].dialogues[slide][paragraph].suivant) options.onComplete = (self) => {
+            self.destroy();
+            speak(
+                Personnage[personne].dialogues[slide][paragraph].suivant.personnage,
+                Personnage[personne].dialogues[slide][paragraph].suivant.slide,
+                Personnage[personne].dialogues[slide][paragraph].suivant.paragraphe
+            );
+        };
+        else if ([0, 3, 4, 6, 7, 9].includes(slide)) options.onComplete = () => {
+            self.destroy();
+            inviteToScroll();
+        };
+
+        new Typed('#textBoxTyped' + slide, options);
+    }
+}
+
+function inviteToScroll() {
+    document.getElementById('mouse-scroll-tip').style.display = 'inline';
+}

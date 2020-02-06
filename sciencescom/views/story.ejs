@@ -12,6 +12,7 @@
         <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/modernizr.js"></script>
+        <script type="text/javascript" src="js/typed.js"></script>
     </head>
     <body>
 
@@ -20,7 +21,7 @@
             <div class="wrap" style="width: 100vw; margin: 0;">
 
                 <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
-                    <ul class="clearfix" style="transform: translateZ(0px) translateX(0px); width: 1500%;">
+                    <ul class="clearfix">
                         <%- include('slides/start.ejs') -%>
 
                         <%- include('slides/period1/introduction.ejs') -%>
@@ -34,6 +35,8 @@
                         <%- include('slides/period3/introduction.ejs') -%>
                         <%- include('slides/period3/testimony1.ejs') -%>
                         <%- include('slides/period3/testimony2.ejs') -%>
+
+                        <%- include('slides/end.ejs') -%>
                     </ul>
                 </div>
 
@@ -49,15 +52,19 @@
                     <img src="img/logo/logo_120_b.png" class="logo" />
                 </div>
 
-            </div>
+                <img class="next" src="img/elements/bouton_scroll_bleu.png" style="width: 3vw; right: 4vw; bottom: 3vh; position: fixed;">
+                <div id="mouse-scroll-tip" style="width: 10vw; right: 1vw; bottom: 1vh; position: fixed; display: none;">
+                    <p style="animation: opacityOn 2s linear infinite">Défilez vers le bas pour avancer</p>
+                </div>
 
-            
+            </div>
 
         </main>
 
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/plugins.js"></script>
         <script type="text/javascript" src="js/sly.min.js"></script>
+        <script type="text/javascript" src="data/Personnage.json"></script>
         <script type="text/javascript" src="js/horizontal.js"></script>
     </body>
 </html>
