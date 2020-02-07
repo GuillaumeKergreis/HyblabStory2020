@@ -17,6 +17,7 @@ app.set('view engine', 'ejs');
 
 app.use('/story', (req, res, next) => res.render('story'));
 
+app.use('/credits', (req, res, next) => res.render('story'));
 
 app.use('/', (req, res, next) => res.render('cover'));
 
