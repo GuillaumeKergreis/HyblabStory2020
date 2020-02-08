@@ -36,22 +36,22 @@
             height: 100vh;
         }
 
-        /*.mapael .mapTooltip {
+        .mapael .mapTooltip {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            background-color: yellow;
-            moz-opacity: 0.70;
-            opacity: 0.70;
-            filter: alpha(opacity=70);
+            background-color: var(--map-dot-color);
+            moz-opacity: 0.85;
+            opacity: 0.85;
+            filter: alpha(opacity=85);
             border-radius: 10px;
-            padding: 10px;
             z-index: 1000;
-            max-height: 30vw;
-            max-width: 15vw;
-            display: none;
-            color: red; /* couleur du texte *//*
-        }*/
+            max-width: 30vw;
+            /*color: #343434;*/
+            margin: 5px;
+            padding: 5px;
+            color: white;
+            font-size: 40px;
+            line-height: 50px;
+        }
 
         /*.tooltipContainer {
             position: absolute;
@@ -63,7 +63,7 @@
             z-index: 998;
         }*/
 
-        .tooltipContainer {
+        /*.tooltipContainer {
             position: absolute;
             height: 40vh;
             max-height: 40vh;
@@ -71,7 +71,7 @@
             max-width: 18vw;
             bottom: 2vh;
             left: 1vw;
-            z-index: 999;
+            z-index: 998;
             background-color: var(--map-bg-color);
             vertical-align: middle;
         }
@@ -80,7 +80,7 @@
             position: relative;
             padding: 0;
             display: inline-block;
-            margin: auto;
+            margin: 0 auto;
             overflow: hidden;
             line-height: normal;
             border-style: solid;
@@ -92,7 +92,7 @@
             color: var(--map-fg-color);
             max-width: 17vw;
             max-height: 38vh;
-        }
+        }*/
     </style>
 
     <script>
@@ -101,7 +101,32 @@
         let frontMapColor = getComputedStyle(document.documentElement).getPropertyValue("--map-fg-color");
         let frontDotColor = getComputedStyle(document.documentElement).getPropertyValue("--map-dot-color");
 
-        $(document).ready(function () {
+        // Création automatique des zones de plot
+        async function getPlotsFromData() {
+
+            function getContent(datum) {
+                return "<span style=\"font-weight:bold;\">" + datum.ville + "</span><br />" +
+                    datum.date + "<br />" + datum.description;
+            }
+
+            let plots = {};
+            await $.getJSON("data/map.json", function (data) {
+                for (let i = 0; i < data.length; i++) {
+                    let city = data[i].ville;
+                    plots[city] = {
+                        latitude: data[i].coordonnees.latitude,
+                        longitude: data[i].coordonnees.longitude,
+                        tooltip: {
+                            content: getContent(data[i])
+                        }
+                    };
+                }
+            });
+
+            return plots;
+        }
+
+        $(document).ready(async function () {
             $(".p3-t2-container").mapael({
                 map: {
                     name: "world_countries_miller",
@@ -115,45 +140,27 @@
                         }
                     },
                     defaultPlot: {
+                        size: 10,
                         attrs: {
                             fill: frontDotColor
                         }
                     }
                 },
-                plots: {
-                    'C-Paris': {
-                        size: 10,
-                        latitude: 48.8534,
-                        longitude: 2.3488,
-                        text: {content: "Paris"},
-                        tooltip: {content: "<span style=\"font-weight:bold;\">Shenzhen</span><br />Population : 10"},
-                        eventHandlers: {
-                            click: function (e, id, mapElem, textElem) {
-                                alert("OK");
-                            }
-                        }
-                    },
-                    'C-Shenzhen': {
-                        size: 10,
-                        latitude: 22.54554,
-                        longitude: 114.0683,
-                        text: {content: "Shenzhen"},
-                        tooltip: {content: "<span style=\"font-weight:bold;\">Shenzhen</span><br />Population : 10"}
-                    }
-                }
+                plots: await getPlotsFromData()
             });
         });
 
-
-//Ne sert potentiellement a rien finalement
-        $("circle").click()
-        /*click(function (event) {
-            alert("OK");
-            console.log("aaa");
-            // access data: $(this).attr("data-id")
-        })*/
-
-
+        /*eventHandlers: {
+                mouseover: function (e, id, mapElem, textElem, elemOptions) {
+                    console.log("OK");
+                },
+                mouseout: function (e, id, mapElem, textElem, elemOptions) {
+                    console.log("OK");
+                },
+                click: function (e, id, mapElem, textElem, elemOptions) {
+                    console.log("OK");
+                }
+           }*/
 
     </script>
 
@@ -165,7 +172,7 @@
             </div>
         </div>
 
-        <div class="tooltipContainer">
+        <!--<div class="tooltipContainer">
             <div class="tooltip">
                 aa aa aa a a aa qsd
                 aaaaaaaaaa
@@ -175,7 +182,7 @@
                 aaaaaaaaaa
                 aaaaaaaaaa
             </div>
-        </div>
+        </div>-->
 
         <!--<div class="buttonContainer">
             <button class="next buttonMap">Passer à la période suivante</button>

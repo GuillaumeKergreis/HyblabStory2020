@@ -22,7 +22,7 @@
         "description": "Obtention du label AACSB (Association to Advance Collegiate Schools of Business)"
     },
     {
-        "ville": "Londres ",
+        "ville": "Londres",
         "pays": "Royaume-Uni",
         "coordonnees": {
             "longitude": -0.1277583,
@@ -72,7 +72,7 @@
             "longitude": 104.066541,
             "latitude": 30.572269
         },
-        "type": "Alliances ",
+        "type": "Alliances",
         "date": 2015,
         "description": "Création d’un cursus de formation commun avec la Western Business School of China"
     },
@@ -85,7 +85,7 @@
         },
         "type": "Alliances ",
         "date": 2017,
-        "description": " Coopération avec l’École Supérieure Algérienne des Affaires pour rendre accessible l’ Executive MBA (Master of Business Administration) d’Audencia depuis l’Algérie"
+        "description": "Coopération avec l’École Supérieure Algérienne des Affaires pour rendre accessible l’Executive MBA (Master of Business Administration) d’Audencia depuis l’Algérie"
     },
     {
         "ville": "Paris",
