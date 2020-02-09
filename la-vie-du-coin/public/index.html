@@ -1,0 +1,79 @@
+<!doctype html>
+
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Hyblab 2020</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://vjs.zencdn.net/7.6.6/video-js.css" rel="stylesheet"/>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.2.0/anime.min.js"></script>
+    <script src="https://vjs.zencdn.net/7.6.6/video.js"></script>
+    <script src="https://rawcdn.githack.com/bchanx/slidr/397004f7acc338b112a9e1dc2481acc1446e0209/slidr.min.js"></script>
+    <script defer src="js/slide1.js"></script>
+    <script defer src="js/slide2.js"></script>
+    <script defer src="js/index.js"></script>
+</head>
+<body>
+<!-- Le conteneur sert à vérouiller les proportions (aspect ratio) du contenu de la page (ici des slides) -->
+<div id="container">
+    <!-- le main est aussi le conteneur des différents slides (contenus à chaque fois dans des sections-->
+    <main id="slidr">
+        <section data-slidr="page-1">
+            <header>
+                <h1 id="titre">Welcome to</h1>
+            </header>
+
+            <img id="logo-hyblab" src="img/logo_hyblab.png"></img>
+
+            <video class="video-js" data-setup='{"autoplay": true, "loop" : true, "fill": true, "muted": true}'
+                   id="background-video">
+                <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4">
+            </video>
+
+            <!-- le footer sera remplir à partir de données lues dans un fichier Json-->
+            <footer></footer>
+        </section>
+        <section data-slidr="page-2">
+            <img id="img-fini" src="https://www.tri-d-aix.com/media/bilder/fini_55c9f_2e319.png">
+            <footer id="bandeau">
+                <!-- Logo Hyblab -->
+                <a href="http://www.hyblab.fr/"><img alt="Hyblab DataSport" id="hyblab" src="logo_hyblab.png"></a>
+
+                <!-- Les organisateurs -->
+                <ul>
+                    <li><a href="http://www.ouestmedialab.fr/"><img alt="Ouest Médialab" src="logo_oml.png"></a></li>
+                    <li><a href="http://www.agrnantes.fr"><img alt="AGR école de l'image" src="ecoles/logo_agr.png"></a>
+                    </li>
+                    <li><a href="http://www.univ-nantes.fr/"><img alt="Université de Nantes"
+                                                                  src="ecoles/logo_universitenantes.jpg"></a></li>
+                    <li><a href="http://www.polytech.univ-nantes.fr/"><img alt="Polytech Nantes"
+                                                                           src="ecoles/logo_polytech.png"></a></li>
+                    <li><a href="http://sciencescom.audencia.com/"><img alt="SciencesCom"
+                                                                        src="ecoles/logo_sciencescom.jpg"></a></li>
+                </ul>
+                <!-- Les autres logos -->
+                <ul>
+                    <!-- Logos CC et opensource -->
+                    <li>
+                        <ul>
+                            <li class="stacked"><img alt="Creative commons" id="cc" src="logo_cc.png"></li>
+                            <li class="stacked"><img alt="Open source" id="opensource" src="logo_opensource.png"></li>
+                        </ul>
+                    </li>
+                    <!-- Logo de votre porteur de projet -->
+                    <li><a href="http://www.mon-porteur-de-projet.org"><img alt="Logo de mon porteur de projet"
+                                                                            src="no-logo.png"></a></li>
+                    <!-- Partenaires institutionnels -->
+                    <li><a href="http://www.paysdelaloire.fr/"><img alt="Pays de La Loire" class="institutionnel"
+                                                                    src="institutionnels/logo_pdl.png"></a></li>
+                    <li><a href="http://www.nantesmetropole.fr/"><img alt="Nantes Métropole" class="institutionnel"
+                                                                      src="institutionnels/logo_nantesmetropole.png"></a>
+                    </li>
+                </ul>
+            </footer>
+        </section>
+    </main>
+</div>
+</body>
+</html>
