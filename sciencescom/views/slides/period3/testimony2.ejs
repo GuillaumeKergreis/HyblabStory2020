@@ -3,7 +3,7 @@
     <script type="text/javascript" src="js/map/raphael-min.js"></script>
     <script type="text/javascript" src="js/map/jquery.mousewheel.min.js"></script>
     <script type="text/javascript" src="js/map/jquery.mapael.js"></script>
-    <script type="text/javascript" src="js/map/world_countries_miller.js"></script>
+    <script type="text/javascript" src="js/map/world_countries_miller-custom.js"></script>
 
     <style type="text/css">
         :root {
@@ -46,13 +46,13 @@
             opacity: 0.90;
             filter: alpha(opacity=90);
             border-radius: 40px;
-            z-index: 1000;
+            z-index: 999;
             max-width: 30vw;
             /*color: #343434;*/
             margin: 5px;
             padding: 5px;
             color: var(--map-fg-color);
-            font-size: 40px;
+            font-size: 35px;
             font-family: Avenir;
             line-height: initial;
             display: none;
@@ -104,7 +104,7 @@
         }
 
         .date {
-            opacity: 0.85;
+            opacity: 0.80;
             font-size: 0.8em;
             font-weight: lighter;
         }
@@ -113,9 +113,18 @@
             opacity: 0.92;
             font-size: 0.8em;
         }
+
+        .plotLegend {
+            position: absolute;
+            bottom: 5vh;
+            left: 5vw;
+            z-index: 1000;
+        }
     </style>
 
     <script>
+
+        // TODO: legende et bon ajustement du tooltip + zoom si possible
 
         let backMapColor = getComputedStyle(document.documentElement).getPropertyValue("--map-bg-color");
         let frontMapColor = getComputedStyle(document.documentElement).getPropertyValue("--map-fg-color");
@@ -130,22 +139,42 @@
                     "<span class=\"description\">" + datum.description + "</span>";
             }
 
+            function getContent_France(datum) {
+                let HTML_res = "";
+                const splitted_description = datum.description.split('|');
+
+                HTML_res += "<span class=\"city\">" + datum.ville + "</span><br />";
+                HTML_res += "<span class=\"date\">" + datum.date + "</span><br />";
+
+                HTML_res += "<span class=\"description\">";
+                for (let i = 0; i < splitted_description.length; i++) {
+                    HTML_res += splitted_description[i] + "<br />";
+                }
+                HTML_res += "</span>";
+
+                return HTML_res;
+            }
+
             let plots = {};
             await $.getJSON("data/map.json", function (data) {
-                // Compteur Nantes
-                let cpt = 1;
                 for (let i = 0; i < data.length; i++) {
 
                     let city = data[i].ville;
-                    if (city === "Nantes") city += cpt++;
 
                     plots[city] = {
                         latitude: data[i].coordonnees.latitude,
-                        longitude: data[i].coordonnees.longitude,
-                        tooltip: {
-                            content: getContent(data[i])
-                        }
+                        longitude: data[i].coordonnees.longitude
                     };
+
+                    if (data[i].pays === "France") {
+                        plots[city]["tooltip"] = {
+                            content: getContent_France(data[i])
+                        };
+                    } else {
+                        plots[city]["tooltip"] = {
+                            content: getContent(data[i])
+                        };
+                    }
 
                     // Beaucoup de points en Europe donc on diminue leur taille
                     if (data[i].continent === "Europe") {
@@ -159,18 +188,24 @@
                     switch (data[i].type) {
                         case "Campus":
                             plots[city]["url"] = "img/map/picto_diplome.png";
+                            // Ratio : 1.32
                             plots[city]["height"] = 10;
-                            plots[city]["width"] = 12;
+                            plots[city]["width"] = 13;
+                            plots[city]["value"] = "diplome";
                             break;
                         case "Partenariat":
                             plots[city]["url"] = "img/map/picto_mains.png";
-                            plots[city]["height"] = 8;
+                            // Ratio : 1.34
+                            plots[city]["height"] = 9;
                             plots[city]["width"] = 12;
+                            plots[city]["value"] = "mains";
                             break;
                         case "Accreditation":
                             plots[city]["url"] = "img/map/picto_medaille.png";
+                            // Ratio : 0.64
                             plots[city]["height"] = 12;
                             plots[city]["width"] = 8;
+                            plots[city]["value"] = "medaille";
                             break;
                     }
                 }
@@ -186,7 +221,7 @@
                     defaultArea: {
                         attrs: {
                             fill: frontMapColor,
-                            stroke: frontMapColor,
+                            stroke: frontMapColor
                         },
                         attrsHover: {
                             fill: frontMapColor
@@ -195,16 +230,57 @@
                     defaultPlot: {
                         size: 10,
                         attrs: {
-                            fill: frontDotColor,
-                            opacity: 0.9
+                            fill: frontDotColor
                         },
                         attrsHover: {
-                            "stroke-width": 10
+                            "stroke-width": 10,
+                            transform: "s1.5"
                         }
-                    },
-                    zoom: {
+                    }
+
+                    /*zoom: {
                         enabled: true,
                         mousewheel: false,
+                    }*/
+                },
+                legend: {
+                    plot: {
+                        marginLeftLabel: 15,
+                        labelAttrs: {
+                            "font-family": "Avenir",
+                            "font-size": 25,
+                            fill: frontMapColor
+                        },
+                        labelAttrsHover: {
+                            transform: "s1.1",
+                            fill: frontMapColor
+                        },
+                        slices: [
+                            {
+                                label: "Campus",
+                                sliceValue: "diplome",
+                                type: "image",
+                                url: "img/map/picto_diplome.png",
+                                height: 10,
+                                width: 13
+                            },
+                            {
+                                label: "Partenariat",
+                                sliceValue: "mains",
+                                type: "image",
+                                url: "img/map/picto_mains.png",
+                                height: 9,
+                                width: 12
+                            },
+                            {
+                                label: "Accréditation",
+                                sliceValue: "medaille",
+                                type: "image",
+                                url: "img/map/picto_medaille.png",
+                                height: 12,
+                                width: 8
+                            }
+                        ]
                     }
                 },
                 plots: await getPlotsFromData()
@@ -229,7 +305,10 @@
 
         <div class="mapContainer">
             <div class="map">
-                <span>Alternative content</span>
+                <span>Carte du monde illustrant la présence d'Audencia à l'international</span>
+            </div>
+            <div class="plotLegend">
+                <span>Légende : pictogrammes de la carte</span>
             </div>
         </div>
 

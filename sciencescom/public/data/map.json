@@ -28,8 +28,8 @@
         "pays": "Royaume-Uni",
         "continent": "Europe",
         "coordonnees": {
-            "longitude": -0.1277583,
-            "latitude": 51.5073509
+            "longitude": -1.297355,
+            "latitude": 52.630886
         },
         "type": "Accreditation",
         "date": 2005,
@@ -46,30 +46,6 @@
         "type": "Partenariat",
         "date": 2012,
         "description": "Partenariat stratégique avec la branche française de la WWF (World Wildlife Fund)"
-    },
-    {
-        "ville": "Nantes",
-        "pays": "France",
-        "continent": "Europe",
-        "coordonnees": {
-            "longitude": -1.574864,
-            "latitude": 47.205867
-        },
-        "type": "Campus",
-        "date": 2006,
-        "description": "Fusion avec SciencesCom et l’École Atlantique de Commerce"
-    },
-    {
-        "ville": "Nantes",
-        "pays": "France",
-        "continent": "Europe",
-        "coordonnees": {
-            "longitude": -1.553621,
-            "latitude": 47.218371
-        },
-        "type": "Partenariat",
-        "date": 2014,
-        "description": "Création de l’Alliance, soit l’union entre Audencia, Centrale Nantes et l’ENSA Nantes (École nationale supérieure d'architecture de Nantes)"
     },
     {
         "ville": "Chengdu",
@@ -96,18 +72,6 @@
         "description": "Coopération avec l’École Supérieure Algérienne des Affaires pour rendre accessible l’Executive MBA (Master of Business Administration) d’Audencia depuis l’Algérie"
     },
     {
-        "ville": "Paris",
-        "pays": "France",
-        "continent": "Europe",
-        "coordonnees": {
-            "longitude": 2.352222,
-            "latitude": 48.856614
-        },
-        "type": "Campus",
-        "date": 2013,
-        "description": "Ouverture d’un nouveau campus à Paris"
-    },
-    {
         "ville": "Shenzhen",
         "pays": "Chine",
         "continent": "Asie",
@@ -120,7 +84,7 @@
         "description": "Ouverture d’un nouveau campus à Shenzhen"
     },
     {
-        "ville": "Nantes",
+        "ville": "Nantes, La-Roche-sur-Yon, Paris",
         "pays": "France",
         "continent": "Europe",
         "coordonnees": {
@@ -128,19 +92,7 @@
             "latitude": 47.204519
         },
         "type": "Campus",
-        "date": 2017,
-        "description": "Ouverture du MEDIACAMPUS, nouveau campus d’Audencia SciencesCom et des locaux d’entreprises et de Télénantes"
-    },
-    {
-        "ville": "La-Roche-sur-Yon",
-        "pays": "France",
-        "continent": "Europe",
-        "coordonnees": {
-            "longitude": -1.426442,
-            "latitude": 46.670511
-        },
-        "type": "Campus",
-        "date": 2020,
-        "description": "Ouverture d’un nouveau campus en Vendée au sein de la CCI du département"
+        "date": "2006 à 2020",
+        "description": "2006 : Fusion avec SciencesCom et l’École Atlantique de Commerce.|2013 : Ouverture d’un nouveau campus à Paris.|2014 : Création de l’Alliance, union entre Audencia, Centrale Nantes et l'ENSA Nantes.|2017 : Ouverture du MEDIACAMPUS, nouveau campus d’Audencia SciencesCom.|2020 : Ouverture d’un nouveau campus en Vendée."
     }
 ]
