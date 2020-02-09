@@ -1,0 +1,65 @@
+body{
+    overflow: scroll;
+    margin-top: 4px;
+    margin-left: 1vw;
+    /*
+    background-image: url("../img/cover/NEVER_STOP_DARING.png");
+    background-size: 210vh 95vh;
+    background-repeat: no-repeat;*/
+}
+
+#hyblab{
+    width: 20vw;
+}
+
+.logoecoles li{
+    list-style-type: none;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 12px;
+}
+.logoecoles img{
+    height: 46px;
+}
+
+.logoLien img{
+    width:1.5vw;
+    vertical-align: middle;
+}
+
+.logoLien{
+    display: inline-block;
+}
+
+.etudiant{
+    margin-top: 3px;
+    display: block;
+    margin-left: 0.5vw;
+    height: 20px;
+}
+
+.etudiants{
+    margin-left: 3vw;
+}
+.ecole{
+    margin-left: 3vw;
+    margin-top: 3px;
+}
+
+.partenaires>div{
+    margin-top: 20px;
+    display: inline-block;
+}
+.stacked{
+    display: inline-block;
+}
+.licence>li{
+    margin-left: 3vw;
+}
+.partenaires img, .licence img{
+    height: 46px;
+}
+
+font{
+    margin: 0;
+}
