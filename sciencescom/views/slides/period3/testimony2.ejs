@@ -2,7 +2,7 @@
 
     <script type="text/javascript" src="js/map/raphael-min.js"></script>
     <script type="text/javascript" src="js/map/jquery.mousewheel.min.js"></script>
-    <script type="text/javascript" src="js/map/jquery.mapael.js"></script>
+    <script type="text/javascript" src="js/map/jquery.mapael-custom.js"></script>
     <script type="text/javascript" src="js/map/world_countries_miller-custom.js"></script>
 
     <style type="text/css">
@@ -26,14 +26,14 @@
         }
 
         .mapContainer {
-            margin: 20px;
+            margin: 60px;
             height: content-box;
             width: content-box;
         }
 
         .mapael .map {
             position: relative;
-            height: 85vh;
+            height: 80vh;
         }
 
         .mapael .mapTooltip {
@@ -47,57 +47,28 @@
             filter: alpha(opacity=90);
             border-radius: 40px;
             z-index: 999;
+            max-height: 80vh;
             max-width: 30vw;
             /*color: #343434;*/
             margin: 5px;
             padding: 5px;
             color: var(--map-fg-color);
-            font-size: 35px;
+            font-size: 1.9vw;
             font-family: Avenir;
             line-height: initial;
             display: none;
         }
 
-        /*.tooltipContainer {
+        .mapael .plotLegend {
             position: absolute;
-            background-color: var(--map-bg-color);
-            height: 37vh;
-            width: 18vw;
-            bottom: 4vh;
-            left: 2vw;
-            z-index: 998;
-        }*/
-
-        /*.tooltipContainer {
-            position: absolute;
-            height: 40vh;
-            max-height: 40vh;
-            width: 18vw;
-            max-width: 18vw;
-            bottom: 2vh;
-            left: 1vw;
-            z-index: 998;
-            background-color: var(--map-bg-color);
-            vertical-align: middle;
+            bottom: 5vh;
+            left: 5vw;
+            z-index: 1000;
         }
 
-        .tooltip {
-            position: relative;
-            padding: 0;
-            display: inline-block;
-            margin: 0 auto;
-            overflow: hidden;
-            line-height: normal;
-            border-style: solid;
-            border-radius: 50px;
-            border-width: 10px;
-            border-color: var(--map-dot-color);
-            z-index: 999;
-            background-color: var(--map-bg-color);
-            color: var(--map-fg-color);
-            max-width: 17vw;
-            max-height: 38vh;
-        }*/
+        .mapael .plotLegend svg {
+            overflow: visible !important;
+        }
 
         .city {
             font-weight: bold
@@ -112,13 +83,6 @@
         .description {
             opacity: 0.92;
             font-size: 0.8em;
-        }
-
-        .plotLegend {
-            position: absolute;
-            bottom: 5vh;
-            left: 5vw;
-            z-index: 1000;
         }
     </style>
 
@@ -176,14 +140,6 @@
                         };
                     }
 
-                    // Beaucoup de points en Europe donc on diminue leur taille
-                    if (data[i].continent === "Europe") {
-                        plots[city]["size"] = 6;
-                        plots[city]["attrsHover"] = {
-                            "stroke-width": plots[city]["size"]
-                        };
-                    }
-
                     plots[city]["type"] = "image";
                     switch (data[i].type) {
                         case "Campus":
@@ -237,11 +193,6 @@
                             transform: "s1.5"
                         }
                     }
-
-                    /*zoom: {
-                        enabled: true,
-                        mousewheel: false,
-                    }*/
                 },
                 legend: {
                     plot: {
@@ -311,22 +262,5 @@
                 <span>Légende : pictogrammes de la carte</span>
             </div>
         </div>
-
-        <!--<div class="tooltipContainer">
-            <div class="tooltip">
-                aa aa aa a a aa qsd
-                aaaaaaaaaa
-                aaaaaaaaaa
-                aaaaaaaaaa
-                aaaaaaaaaa
-                aaaaaaaaaa
-                aaaaaaaaaa
-            </div>
-        </div>-->
-
-        <!--<div class="buttonContainer">
-            <button class="next buttonMap">Passer à la période suivante</button>
-            <button class="prev buttonMap">Voir le 2nd témoignage</button>
-        </div>-->
     </div>
 </li>

@@ -2117,6 +2117,12 @@
                     }
                 }
 
+                let maxLeft = self.$map.width() / 1.5575;
+
+                if (tooltipPosition.left > maxLeft) {
+                    tooltipPosition.left = maxLeft;
+                }
+
                 self.$tooltip.css(tooltipPosition);
             }
         },
