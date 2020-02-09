@@ -64,9 +64,8 @@
 .slide {
     width: 100vw !important;
     height: 100vh !important;
-    float: left;
-    margin: 0 1px 0 0;
-    padding: 0;
+    margin: 0 !important;
+    background-color: white !important;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -155,21 +154,16 @@ img.persGarconP2:hover {
     cursor: pointer;
 }
 
-.slide {
-    width: 100vw !important;
-    height: 100vh !important;
+
+.frame ul li.active {
+    color: #fff;
+    background: #333;
 }
 
 body {
     background-color: white;
     color: white;
     overflow: hidden;
-    /* pour slidr dans certains navigateurs */
-}
-
-#container {
-    position: relative;
-    /* pour permettre le positionnement en absolu des autres éléments */
 }
 
 /* Scrollbar */
@@ -201,26 +195,6 @@ body {
     height: 20px;
 }
 
-/* Pages */
-
-.pages {
-    list-style: none;
-    margin: 20px 0;
-    padding: 0;
-    text-align: center;
-}
-
-.pages li {
-    display: inline-block;
-    width: 14px;
-    height: 14px;
-    margin: 0 4px;
-    text-indent: -999px;
-    border-radius: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .2);
-}
 
 /* Animations */
 
@@ -252,9 +226,9 @@ body {
 }
 
 .indication {
-    font-family: Avenir;
+    font-family: Avenir, sans-serif;
     color: white;
-    font-size: 30;
+    font-size: 30px;
     line-height: normal;
 }
 
@@ -264,8 +238,38 @@ body {
 }
 
 #mouse-scroll-tip p {
-    font-family: Avenir;
-    font-size: 13;
+    font-family: Avenir, sans-serif;
+    font-size: 13px;
     margin-top: 15px;
     color: #DD4C73;
+}
+
+@keyframes opacityOn {
+    50% {
+        opacity: 0;
+    }
+}
+
+/* TextBox */
+
+.textBox {
+    width: 25vw;
+    left: 5vw;
+    bottom: 15vh;
+}
+
+.textBoxTyped {
+    width: 15vw;
+    height: 0;
+    left: 14.5vw;
+    bottom: 15vh;
+    margin-bottom:7vw;
+    color: black;
+    line-height: normal;
+    font-size: 1.2vw;
+    text-align: left;
+}
+
+.typed-cursor {
+    display: none;
 }
