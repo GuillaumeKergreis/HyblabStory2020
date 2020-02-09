@@ -14,21 +14,23 @@ function playAnimation(id) {
 }
 
 
-function nowToSeventies(jumps) {
-    var $video = document.getElementById("doornow");
+function decorTransition(decorFrom, decorTo, videoOut, videoIn, jumps) {
+    var $video = document.getElementById(videoOut);
 
     $video.playbackRate = 0.5;
     $video.currentTime = 0;
     $video.style.visibility = "visible";
 
     $video.play();
-    $("#decor").fadeOut(1000);
+    $("#decor_hider").fadeIn(1000);
+    setTimeout(function () {
+        document.getElementById(decorFrom).style.visibility = "hidden";
+        document.getElementById(decorTo).style.visibility = "visible";
+    }, 1200);
 
 
     $video.addEventListener('ended', () => {
-        document.getElementById("decor").setAttribute("src", "img/decors/decor2.png");
-
-        var $nextvideo = document.getElementById("door70s_rev");
+        var $nextvideo = document.getElementById(videoIn);
         $nextvideo.playbackRate = 0.5;
         $nextvideo.currentTime = 0;
         $nextvideo.style.visibility = "visible";
@@ -36,7 +38,9 @@ function nowToSeventies(jumps) {
         $video.style.visibility = "hidden";
 
         $nextvideo.play();
-        $("#decor").fadeIn(1000);
+        setTimeout(function () {
+            $("#decor_hider").fadeOut(1000);
+        }, 1000);
 
         $nextvideo.addEventListener('ended', () => {
             $nextvideo.style.visibility = "hidden";
@@ -49,4 +53,9 @@ function nowToSeventies(jumps) {
     for (i = 0; i < jumps; i++) {
         $('#oneperframe').sly('next');
     }
+}
+
+
+function nowToSeventies(jumps) {
+    decorTransition("decor", "decor2", "doornow", "door70s_rev", jumps);
 }
