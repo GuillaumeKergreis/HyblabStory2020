@@ -244,7 +244,7 @@ body {
     height: 0;
     left: 14.5vw;
     bottom: 15vh;
-    margin-bottom:7vw;
+    margin-bottom: 7vw;
     color: black;
     line-height: normal;
     font-size: 1.2vw;
@@ -253,4 +253,80 @@ body {
 
 .typed-cursor {
     display: none;
+}
+
+/* Carte interactive */
+
+:root {
+    --map-bg-color: #ffffff;
+    --map-fg-color: #002d59;
+    --map-dot-color: #e83368;
+}
+
+#carteInteractive {
+    background-color: var(--map-bg-color);
+}
+
+.p3-t2-container {
+    position: relative;
+    height: 100vh;
+}
+
+.mapContainer {
+    margin: 60px;
+    height: content-box;
+    width: content-box;
+}
+
+.mapael .map {
+    position: relative;
+    height: 80vh;
+}
+
+.mapael .mapTooltip {
+    position: absolute;
+    background-color: var(--map-bg-color);
+    border-color: var(--map-dot-color);
+    border-width: 5px;
+    border-style: solid;
+    moz-opacity: 0.90;
+    opacity: 0.90;
+    filter: alpha(opacity=90);
+    border-radius: 40px;
+    z-index: 999;
+    max-height: 80vh;
+    max-width: 30vw;
+    margin: 5px;
+    padding: 5px;
+    color: var(--map-fg-color);
+    font-size: 1.9vw;
+    font-family: Avenir;
+    line-height: initial;
+    display: none;
+}
+
+.mapael .plotLegend {
+    position: absolute;
+    bottom: 5vh;
+    left: 5vw;
+    z-index: 1000;
+}
+
+.mapael .plotLegend svg {
+    overflow: visible !important;
+}
+
+.city {
+    font-weight: bold
+}
+
+.date {
+    opacity: 0.80;
+    font-size: 0.8em;
+    font-weight: lighter;
+}
+
+.description {
+    opacity: 0.92;
+    font-size: 0.8em;
 }

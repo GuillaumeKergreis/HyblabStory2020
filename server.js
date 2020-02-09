@@ -9,7 +9,8 @@ let app = express();
 //app.use(basicAuth('story2020', 'ilovestory'));
 
 // declare the list of sub apps
-let app_names = ['sciencescom'];
+let app_names = ['10-24-1', '10-24-2', 'alveole', 'bout-du-monde', 'handiplanet',
+    'la-vie-du-coin', 'region-pdl', 'sciencescom', 'sorties-de-secours', 'ville-saint-nazaire'];
 
 let story2020_names = [];
 

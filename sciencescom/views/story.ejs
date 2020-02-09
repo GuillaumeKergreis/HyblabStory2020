@@ -12,16 +12,17 @@
         <link rel="stylesheet" href="css/font-awesome.css">
         <link rel="stylesheet" href="css/style.css">
         <script type="text/javascript" src="js/modernizr.js"></script>
+        <!-- Nécessité de charger jquery dans le head pour l'affichage de la carte -->
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/typed.js"></script>
     </head>
     <body>
 
-        <main>
+    <main>
 
-            <div class="wrap" style="width: 100vw; margin: 0;">
+        <div class="wrap" style="width: 100vw; margin: 0;">
 
-                <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
+            <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
                     <ul class="clearfix">
                         <%- include('slides/start.ejs') -%>
 
@@ -58,13 +59,18 @@
                     <p style="animation: opacityOn 2s linear infinite">Défilez vers le bas pour avancer</p>
                 </div>
 
-            </div>
+        </div>
 
-        </main>
+    </main>
 
-        <script type="text/javascript" src="js/plugins.js"></script>
-        <script type="text/javascript" src="js/sly.min.js"></script>
-        <script type="text/javascript" src="data/Personnage.json"></script>
-        <script type="text/javascript" src="js/horizontal.js"></script>
+    <script type="text/javascript" src="js/plugins.js"></script>
+    <script type="text/javascript" src="js/sly.min.js"></script>
+    <script type="text/javascript" src="data/Personnage.json"></script>
+    <script type="text/javascript" src="js/horizontal.js"></script>
+    <script type="text/javascript" src="js/map/raphael-min.js"></script>
+    <script type="text/javascript" src="js/map/jquery.mousewheel.min.js"></script>
+    <script type="text/javascript" src="js/map/jquery.mapael-custom.js"></script>
+    <script type="text/javascript" src="js/map/world_countries_miller-custom.js"></script>
+    <script type="text/javascript" src="js/map/carteInteractive.js"></script>
     </body>
 </html>
