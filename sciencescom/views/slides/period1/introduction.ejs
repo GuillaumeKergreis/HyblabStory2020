@@ -1,14 +1,49 @@
 <li class="slide stop-scroll">
 
+    <img src="img/decors/decor3.png" style="width: 80vw; height: 100vh; left: 10vw; top: 0">
     <img src="img/decors/decor_now.webp" class="inslide-decor">
 
-    <img src="img/personnages/Pablo_periode_1.png" style="width: 7vw; left: 35vw; bottom: 7vw; transform: scaleX(-1);">
-    <img src="img/personnages/Emma_periode_1.png" style="width: 7vw; left: 45vw; bottom: 7vw;  transform: scaleX(-1);">
+    <img src="img/personnages/Pablo_periode_1.png" style="width: 6vw; left: 42vw; bottom: 7vw; transform: scaleX(-1);">
+    <img src="img/personnages/Emma_periode_1.png" style="width: 6vw; left: 52vw; bottom: 7vw;">
 
-    <img class="next" src="img/temoignages/lettre_jean.png" style="width: 10vw; left: 55vw; bottom: 25vh;">
-    <img class="next2" src="img/temoignages/journal_marie.png" style="width: 10vw; left: 70vw; bottom: 35vh;">
+    <img id="lettre-icon" class="next" src="img/decors/lettre.png" style="width: 4vw; left: 60.5vw; bottom: 31.7vh;">
+    <img id="livre-icon" class="next2" src="img/decors/livre.png" style="width: 4vw; left: 35vw; bottom: 31.7vh;">
 
     <img id="textBox1" class="textBox">
     <span id="textBoxTyped1" class="textBoxTyped"></span>
 
+
+    <style>
+        #lettre-icon {
+            align-self: flex-end;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            transform-origin: bottom;
+        }
+        #livre-icon {
+            align-self: flex-end;
+            animation-duration: 2s;
+            animation-delay: 1s;
+            animation-iteration-count: infinite;
+            transform-origin: bottom;
+        }
+        .bounce {
+            transition: transform 0.5s ease;
+            animation-name: bounce;
+            animation-timing-function: ease;
+        }
+        .bounce:hover {
+            transform: scale(1.2);
+            animation: none;
+        }
+        @keyframes bounce {
+            0%   { transform: scale(1,1)}
+            10%  { transform: scale(1.1,.9)}
+            30%  { transform: scale(.9,1.1)}
+            50%  { transform: scale(1,1)}
+            100% { transform: scale(1,1)}
+        }
+    </style>
+
 </li>
+

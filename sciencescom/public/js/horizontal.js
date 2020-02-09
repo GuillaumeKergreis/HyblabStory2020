@@ -91,15 +91,14 @@ jQuery(function($){
 function launchSpeech(index) {
     index = parseInt(index);
     switch(index) {
-        case 2:
-            break;
-        case 3:
-            break;
         case 5:
             speak('Pablo', index);
             break;
         case 6:
             speak('Pablo', index);
+            break;
+        case 10:
+            speak('Emma', index, 2);
             break;
         default:
             speak('Emma', index);
@@ -114,10 +113,11 @@ function launchSpeech(index) {
  * @param {int} paragraph
  */
 function speak(personne, slide, paragraph= 0) {
+    slide = parseInt(slide);
     if (![2, 3].includes(slide)) {
         if (slide === 1) {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_1;
-        } else if ([4, 5, 6, "4", "5", "6"].includes(slide) && personne === 'Emma') {
+        } else if ([4, 5, 6].includes(slide) && personne === 'Emma') {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_2;
             document.getElementById('textBox' + slide).style.width = '26vw';
             document.getElementById('textBox' + slide).style.left = '4vw';
@@ -133,7 +133,8 @@ function speak(personne, slide, paragraph= 0) {
 
         let options = {
             strings: Personnage[personne].dialogues[slide][paragraph].texte,
-            typeSpeed: 30
+            typeSpeed: 30,
+            fadeOut: true
         };
 
         if (Personnage[personne].dialogues[slide][paragraph].suivant) options.onComplete = (self) => {
@@ -144,10 +145,19 @@ function speak(personne, slide, paragraph= 0) {
                 Personnage[personne].dialogues[slide][paragraph].suivant.paragraphe
             );
         };
-        else if ([0, 3, 4, 6, 7, 9].includes(slide)) options.onComplete = () => {
+        else if ([0, 3, 4, 6, 7, 9].includes(slide)) options.onComplete = (self) => {
             self.destroy();
             inviteToScroll();
         };
+        else if (slide === 1 && Personnage[personne].dialogues[slide][paragraph].suivant !== '') {
+            options.onComplete = (self) => {
+                document.getElementById('lettre-icon').classList.add('bounce');
+                document.getElementById('livre-icon').classList.add('bounce');
+                document.getElementById('lettre-icon').addEventListener('click', () => self.destroy());
+                document.getElementById('livre-icon').addEventListener('click', () => self.destroy());
+            }
+        }
+        else options.onComplete = (self) => self.destroy();
 
         new Typed('#textBoxTyped' + slide, options);
     }
