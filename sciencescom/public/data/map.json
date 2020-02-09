@@ -2,132 +2,144 @@
     {
         "ville": "Bruxelles",
         "pays": "Belgique",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": 4.351710,
             "latitude": 50.850340
         },
-        "type": "Accréditation",
+        "type": "Accreditation",
         "date": 1998,
         "description": "Obtention du label EQUIS (European Quality Improvement System)"
     },
     {
         "ville": "Tampa",
         "pays": "USA",
+        "continent": "Amerique",
         "coordonnees": {
             "longitude": -82.4571776,
             "latitude": 27.950575
         },
-        "type": "Accréditation",
-        "date": 2004 ,
+        "type": "Accreditation",
+        "date": 2004,
         "description": "Obtention du label AACSB (Association to Advance Collegiate Schools of Business)"
     },
     {
         "ville": "Londres",
         "pays": "Royaume-Uni",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": -0.1277583,
             "latitude": 51.5073509
         },
-        "type": "Accréditation",
+        "type": "Accreditation",
         "date": 2005,
         "description": "Obtention de l’accréditation anglaise AMBA (Association of Master of Business Administration)"
     },
     {
         "ville": "Morges",
         "pays": "Suisse",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": 6.496130,
             "latitude": 46.508813
         },
-        "type": "Accréditation",
+        "type": "Partenariat",
         "date": 2012,
         "description": "Partenariat stratégique avec la branche française de la WWF (World Wildlife Fund)"
     },
     {
         "ville": "Nantes",
         "pays": "France",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": -1.574864,
             "latitude": 47.205867
         },
-        "type": "Fusion",
+        "type": "Campus",
         "date": 2006,
         "description": "Fusion avec SciencesCom et l’École Atlantique de Commerce"
     },
     {
         "ville": "Nantes",
         "pays": "France",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": -1.553621,
             "latitude": 47.218371
         },
-        "type": "Alliance",
+        "type": "Partenariat",
         "date": 2014,
         "description": "Création de l’Alliance, soit l’union entre Audencia, Centrale Nantes et l’ENSA Nantes (École nationale supérieure d'architecture de Nantes)"
     },
     {
         "ville": "Chengdu",
         "pays": "Chine",
+        "continent": "Asie",
         "coordonnees": {
             "longitude": 104.066541,
             "latitude": 30.572269
         },
-        "type": "Alliances",
+        "type": "Partenariat",
         "date": 2015,
         "description": "Création d’un cursus de formation commun avec la Western Business School of China"
     },
     {
         "ville": "Alger",
         "pays": "Algérie",
+        "continent": "Afrique",
         "coordonnees": {
             "longitude": 3.042048,
             "latitude": 36.752887
         },
-        "type": "Alliances ",
+        "type": "Partenariat",
         "date": 2017,
         "description": "Coopération avec l’École Supérieure Algérienne des Affaires pour rendre accessible l’Executive MBA (Master of Business Administration) d’Audencia depuis l’Algérie"
     },
     {
         "ville": "Paris",
         "pays": "France",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": 2.352222,
             "latitude": 48.856614
         },
-        "type": "Nouveau campus",
+        "type": "Campus",
         "date": 2013,
         "description": "Ouverture d’un nouveau campus à Paris"
     },
     {
         "ville": "Shenzhen",
         "pays": "Chine",
+        "continent": "Asie",
         "coordonnees": {
             "longitude": 114.057868,
             "latitude": 22.543099
         },
-        "type": "Nouveau campus",
+        "type": "Campus",
         "date": 2016,
         "description": "Ouverture d’un nouveau campus à Shenzhen"
     },
     {
         "ville": "Nantes",
         "pays": "France",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": -1.560839,
             "latitude": 47.204519
         },
-        "type": "Nouveau campus",
+        "type": "Campus",
         "date": 2017,
         "description": "Ouverture du MEDIACAMPUS, nouveau campus d’Audencia SciencesCom et des locaux d’entreprises et de Télénantes"
     },
     {
         "ville": "La-Roche-sur-Yon",
         "pays": "France",
+        "continent": "Europe",
         "coordonnees": {
             "longitude": -1.426442,
             "latitude": 46.670511
         },
-        "type": "Nouveau campus",
+        "type": "Campus",
         "date": 2020,
         "description": "Ouverture d’un nouveau campus en Vendée au sein de la CCI du département"
     }

@@ -26,31 +26,36 @@
         }
 
         .mapContainer {
-            margin: 10px;
+            margin: 20px;
             height: content-box;
             width: content-box;
         }
 
         .mapael .map {
             position: relative;
-            height: 100vh;
+            height: 85vh;
         }
 
         .mapael .mapTooltip {
             position: absolute;
-            background-color: var(--map-dot-color);
-            moz-opacity: 0.85;
-            opacity: 0.85;
-            filter: alpha(opacity=85);
-            border-radius: 10px;
+            background-color: var(--map-bg-color);
+            border-color: var(--map-dot-color);
+            border-width: 5px;
+            border-style: solid;
+            moz-opacity: 0.90;
+            opacity: 0.90;
+            filter: alpha(opacity=90);
+            border-radius: 40px;
             z-index: 1000;
             max-width: 30vw;
             /*color: #343434;*/
             margin: 5px;
             padding: 5px;
-            color: white;
+            color: var(--map-fg-color);
             font-size: 40px;
-            line-height: 50px;
+            font-family: Avenir;
+            line-height: initial;
+            display: none;
         }
 
         /*.tooltipContainer {
@@ -93,6 +98,21 @@
             max-width: 17vw;
             max-height: 38vh;
         }*/
+
+        .city {
+            font-weight: bold
+        }
+
+        .date {
+            opacity: 0.85;
+            font-size: 0.8em;
+            font-weight: lighter;
+        }
+
+        .description {
+            opacity: 0.92;
+            font-size: 0.8em;
+        }
     </style>
 
     <script>
@@ -105,14 +125,20 @@
         async function getPlotsFromData() {
 
             function getContent(datum) {
-                return "<span style=\"font-weight:bold;\">" + datum.ville + "</span><br />" +
-                    datum.date + "<br />" + datum.description;
+                return "<span class=\"city\">" + datum.ville + "</span><br />" +
+                    "<span class=\"date\">" + datum.date + "</span><br />" +
+                    "<span class=\"description\">" + datum.description + "</span>";
             }
 
             let plots = {};
             await $.getJSON("data/map.json", function (data) {
+                // Compteur Nantes
+                let cpt = 1;
                 for (let i = 0; i < data.length; i++) {
+
                     let city = data[i].ville;
+                    if (city === "Nantes") city += cpt++;
+
                     plots[city] = {
                         latitude: data[i].coordonnees.latitude,
                         longitude: data[i].coordonnees.longitude,
@@ -120,6 +146,33 @@
                             content: getContent(data[i])
                         }
                     };
+
+                    // Beaucoup de points en Europe donc on diminue leur taille
+                    if (data[i].continent === "Europe") {
+                        plots[city]["size"] = 6;
+                        plots[city]["attrsHover"] = {
+                            "stroke-width": plots[city]["size"]
+                        };
+                    }
+
+                    plots[city]["type"] = "image";
+                    switch (data[i].type) {
+                        case "Campus":
+                            plots[city]["url"] = "img/map/picto_diplome.png";
+                            plots[city]["height"] = 10;
+                            plots[city]["width"] = 12;
+                            break;
+                        case "Partenariat":
+                            plots[city]["url"] = "img/map/picto_mains.png";
+                            plots[city]["height"] = 8;
+                            plots[city]["width"] = 12;
+                            break;
+                        case "Accreditation":
+                            plots[city]["url"] = "img/map/picto_medaille.png";
+                            plots[city]["height"] = 12;
+                            plots[city]["width"] = 8;
+                            break;
+                    }
                 }
             });
 
@@ -133,7 +186,7 @@
                     defaultArea: {
                         attrs: {
                             fill: frontMapColor,
-                            stroke: frontMapColor
+                            stroke: frontMapColor,
                         },
                         attrsHover: {
                             fill: frontMapColor
@@ -142,8 +195,16 @@
                     defaultPlot: {
                         size: 10,
                         attrs: {
-                            fill: frontDotColor
+                            fill: frontDotColor,
+                            opacity: 0.9
+                        },
+                        attrsHover: {
+                            "stroke-width": 10
                         }
+                    },
+                    zoom: {
+                        enabled: true,
+                        mousewheel: false,
                     }
                 },
                 plots: await getPlotsFromData()
