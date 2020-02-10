@@ -119,7 +119,7 @@ function launchSpeech(index) {
  */
 function speak(personne, slide, paragraph= 0) {
     slide = parseInt(slide);
-    if (![2, 3].includes(slide)) {
+    if (![2, 3, 8, 9].includes(slide)) {
         if (slide === 1) {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_1;
         } else if ([4, 5, 6].includes(slide) && personne === 'Emma') {
@@ -150,7 +150,7 @@ function speak(personne, slide, paragraph= 0) {
                 Personnage[personne].dialogues[slide][paragraph].suivant.paragraphe
             );
         };
-        else if ([7, 9].includes(slide)) options.onComplete = (self) => {
+        else if ([9].includes(slide)) options.onComplete = (self) => {
             self.destroy();
             inviteToScroll();
         };
@@ -184,6 +184,15 @@ function speak(personne, slide, paragraph= 0) {
                 inviteToScroll();
             }
         }
+        else if (slide === 7) {
+            options.onComplete = (self) => {
+                document.getElementById('video-icon').classList.add('bounce');
+                document.getElementById('carte-icon').classList.add('bounce');
+                document.getElementById('video-icon').addEventListener('click', () => self.destroy());
+                document.getElementById('carte-icon').addEventListener('click', () => self.destroy());
+                document.getElementById('Emma-slide-7').style.transform = 'scaleX(-1)';
+            }
+        }
         else if (slide === 0) {
             inviteToScroll();
         }
@@ -191,6 +200,7 @@ function speak(personne, slide, paragraph= 0) {
 
         new Typed('#textBoxTyped' + slide, options);
     }
+    else inviteToScroll();
 }
 
 function inviteToScroll() {

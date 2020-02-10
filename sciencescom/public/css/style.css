@@ -74,7 +74,7 @@
 }
 
 /* Bounce */
-#livre-icon, #martine {
+#livre-icon, #martine, #carte-icon {
     animation-delay: 1s;
 }
 .bounce {

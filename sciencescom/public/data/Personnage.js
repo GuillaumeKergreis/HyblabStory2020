@@ -44,15 +44,15 @@ let Personnage = {
       ],
       "7": [
         {
-          "texte": ["tu en sais un peu plus maintenant. J’ai encore une période à te faire découvrir. Tu verra tu ne sera pas déçu. C’est peut-être celle qui te parlera le plus."],
+          "texte": ["^1500Tu en sais un peu plus maintenant.^300 J’ai encore une période à te faire découvrir.^500", "Tu verra tu ne sera pas déçu.^300 C’est peut-être celle qui te parlera le plus.^500"],
           "suivant": {"personnage": "Pablo", "slide": "7", "paragraphe": "0"}
         },
         {
-          "texte": ["À présent, nous sommes déjà sur la période contemporaine de l’école. Beaucoup des éléments qui s’y déroulent sont encore là dans l’école d’ailleurs !"],
-          "suivant": {"personnage": "Pablo", "slide": "4", "paragraphe": "1"}
+          "texte": ["À présent,^150 nous sommes déjà sur la période contemporaine de l’école.^500", "Beaucoup des éléments qui s’y déroulent sont encore là dans l’école d’ailleurs !^500"],
+          "suivant": {"personnage": "Pablo", "slide": "7", "paragraphe": "1"}
         },
         {
-          "texte": ["Exactement ! Et tu vas voir, l’école a beaucoup changé ces 20 dernières années…"]
+          "texte": ["Exactement !^200 Et tu vas voir,^150 l’école a beaucoup changé ces 20 dernières années…^500"]
         }
       ],
       "10": [
@@ -153,17 +153,17 @@ let Personnage = {
       ],
       "7": [
         {
-          "texte": ["je ne m’attendais pas à une telle histoire je suis ravi de la découvrir et de la connaître un peu plus."],
+          "texte": ["je ne m’attendais pas à une telle histoire,^150 je suis ravi de la découvrir et de la connaître un peu plus.^500"],
           "suivant": {"personnage": "Emma", "slide": "7", "paragraphe": "1"}
         },
         {
-          "texte": ["Cool, donc un peu plus proche de ce que je pourrais faire à Audencia, non ?"],
-          "suivant": {"personnage": "Emma", "slide": "4", "paragraphe": "2"}
+          "texte": ["Cool,^150 donc un peu plus proche de ce que je pourrais faire à Audencia,^150 non ?^500"],
+          "suivant": {"personnage": "Emma", "slide": "7", "paragraphe": "2"}
         }
       ],
       "10": [
         {
-          "texte": ["Déjà ? Mince, c’est passé si vite ! Dans ce cas, retournons chez nous !"],
+          "texte": ["Déjà ?^300 Mince,^150 c’est passé si vite !^300 Dans ce cas, retournons chez nous !^500"],
           "suivant": {"personnage": "Emma", "slide": "10", "paragraphe": "1"}
         },
         {
