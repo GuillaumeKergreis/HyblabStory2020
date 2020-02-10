@@ -34,10 +34,8 @@ jQuery(function ($) {
                 if (moveSliderIndexes.includes(index)) {
                     timeSlider.value = moveSliderIndexes.indexOf(index);
                 }
+                
                 let isKeySlide = false;
-
-                console.log('Active item : ' + index);
-                console.log(this.items[index].el.classList);
 
                 /* Animation vidéo transition époque */
                 let select = this.items[index].el.getElementsByClassName("inslide-decor");
