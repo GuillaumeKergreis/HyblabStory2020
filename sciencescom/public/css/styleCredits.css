@@ -1,26 +1,32 @@
 body{
-    overflow: scroll;
     margin-top: 4px;
     margin-left: 1vw;
-    /*
-    background-image: url("../img/cover/NEVER_STOP_DARING.png");
-    background-size: 210vh 95vh;
-    background-repeat: no-repeat;*/
+    background-color: black;
+
+    background-image: url("../img/logo/logo_120_b.png");
+    background-position: top 5vw left 11vw;
+    background-size: 180vh 80vh;
+    background-repeat: no-repeat;
+    text-align: center;
 }
 
 #hyblab{
     width: 20vw;
 }
-
+ul{
+    list-style-type: none;
+}
 .logoecoles li{
     list-style-type: none;
     display: inline-block;
     vertical-align: middle;
-    margin: 0 12px;
+    margin: 5px 12px;
+    background-color: white;
 }
 .logoecoles img{
     height: 46px;
 }
+
 
 .logoLien img{
     width:1.5vw;
@@ -30,34 +36,31 @@ body{
 .logoLien{
     display: inline-block;
 }
-
+.etudiants>li{
+    margin-top: 1vw;
+}
 .etudiant{
     margin-top: 3px;
     display: block;
-    margin-left: 0.5vw;
     height: 20px;
 }
 
-.etudiants{
-    margin-left: 3vw;
-}
 .ecole{
-    margin-left: 3vw;
     margin-top: 3px;
 }
 
-.partenaires>div{
-    margin-top: 20px;
-    display: inline-block;
-}
 .stacked{
     display: inline-block;
 }
-.licence>li{
-    margin-left: 3vw;
-}
-.partenaires img, .licence img{
+.partenaires img{
     height: 46px;
+    background-color: white;
+}
+.licence img{
+    height: 46px;
+}
+.partenaires{
+    margin-top: 10px;
 }
 
 font{
