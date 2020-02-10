@@ -34,7 +34,12 @@ jQuery(function ($) {
                 if (moveSliderIndexes.includes(index)) {
                     timeSlider.value = moveSliderIndexes.indexOf(index);
                 }
+                let isKeySlide = false;
 
+                console.log('Active item : ' + index);
+                console.log(this.items[index].el.classList);
+
+                /* Animation vidéo transition époque */
                 let select = this.items[index].el.getElementsByClassName("inslide-decor");
                 if (select.length > 0) {
                     let srcFrom = document.getElementById("bg-decor").getAttribute('src');
@@ -42,6 +47,15 @@ jQuery(function ($) {
                     if (srcFrom !== srcTo){
                         decorTransition(srcFrom, srcTo);
                     }
+                }
+
+                /* Animation entrée slide clé */
+                select = this.items[index].el.getElementsByClassName('key-slide-content');
+                if (select.length > 0) {
+                    isKeySlide = true;
+                    setTimeout(function () {
+                        $(select[0]).fadeIn(2000);
+                    }, 2300);
                 }
 
 
@@ -65,7 +79,14 @@ jQuery(function ($) {
                         touchDragging: 1,
                     });
                 }
-                launchSpeech(index);
+                if(isKeySlide){
+                    setTimeout(function () {
+                        launchSpeech(index);
+                    }, 4000);
+                }
+                else{
+                    launchSpeech(index);
+                }
                 hideInviteToScroll();
             }
             }
