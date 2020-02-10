@@ -1,12 +1,12 @@
 'use strict';
 
-jQuery(function($){
+jQuery(function ($) {
     // -------------------------------------------------------------
     //   One Item Per Frame
     // -------------------------------------------------------------
     (function () {
         var $frame = $('#oneperframe');
-        var $wrap  = $frame.parent();
+        var $wrap = $frame.parent();
 
         // Call Sly on frame
         $frame.sly({
@@ -18,7 +18,6 @@ jQuery(function($){
             touchDragging: 1,
             releaseSwing: 1,
             startAt: 0,
-            scrollBar: $wrap.find('.scrollbar'),
             scrollBy: 1,
             speed: 2500,
             elasticBounds: 1,
@@ -28,8 +27,12 @@ jQuery(function($){
             clickBar: 1,
         }, {
             active: function(evt, index) {
-                console.log('Active item : ' + index);
-                console.log(this.items[index].el.classList);
+                let timeSlider = document.getElementById("timeSlider");
+                let moveSliderIndexes = [0, 1, 4, 7, 8];
+
+                if (moveSliderIndexes.includes(index)) {
+                    timeSlider.value = moveSliderIndexes.indexOf(index);
+                }
 
                 let select = this.items[index].el.getElementsByClassName("inslide-decor");
                 if (select.length > 0) {
@@ -67,16 +70,16 @@ jQuery(function($){
         );
 
         // Pause button
-        $wrap.find('.next2').on('click', function() {
+        $wrap.find('.next2').on('click', function () {
             $frame.sly('next');
             $frame.sly('next');
         });
 
-        $wrap.find('.next').on('click', function() {
+        $wrap.find('.next').on('click', function () {
             $frame.sly('next');
         });
 
-        $wrap.find('.prev').on('click', function() {
+        $wrap.find('.prev').on('click', function () {
             $frame.sly('prev');
         });
 
@@ -121,7 +124,7 @@ function speak(personne, slide, paragraph= 0) {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_2;
             document.getElementById('textBox' + slide).style.width = '26vw';
             document.getElementById('textBox' + slide).style.left = '4vw';
-        } else if(personne === 'Alain'){
+        } else if (personne === 'Alain') {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue;
             document.getElementById('textBox' + slide).style.width = '28vw';
             document.getElementById('textBox' + slide).style.left = '2vw';
