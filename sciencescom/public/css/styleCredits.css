@@ -1,13 +1,12 @@
 body{
-    margin-top: 4px;
-    margin-left: 1vw;
     background-color: black;
     font-family: Avenir;
     color: white;
+    font-size: 2.3vh;
 
     background-image: url("../img/logo/logo_120_b.png");
-    background-position: top 5vw left 11vw;
-    background-size: 180vh 80vh;
+    background-position: top 7vh left 11vw;
+    background-size: 80vw 80vh;
     background-repeat: no-repeat;
     text-align: center;
 }
@@ -22,20 +21,25 @@ ul{
     list-style-type: none;
     display: inline-block;
     vertical-align: middle;
-    margin: 5px 12px;
-    background-color: white;
-    border-color: #e83368;
-    border-width: 5px;
-    border-style: solid;
 }
 .logoecoles img{
-    height: 40px;
+    height: 7vh;
+    margin: 0.5vh;
+}
+.logo{
+    border-radius: 0.5vh;
+    background-color: white;
+    opacity: 0.90;
+    border-color: #e83368;
+    border-width: 0.2vh;
+    border-style: solid;
+    height: 7.5vh;
 }
 
 
 
 .logoLien img{
-    width:1.5vw;
+    width:3vh;
     vertical-align: middle;
 }
 
@@ -43,38 +47,30 @@ ul{
     display: inline-block;
 }
 .etudiants>li{
-    margin-top: 1vw;
+    margin-top: 2vh;
 }
 .etudiant{
-    margin-top: 2px;
-    display: block;
-    height: 20px;
+    margin-top: 0.4vh;
+    height: 2vh;
 }
 
 .ecole{
-    margin-top: 3px;
+    margin-top: 0.4vh;
 }
 
 .stacked{
     display: inline-block;
 }
 .partenaires img{
-    height: 40px;
-    background-color: white;
-    border-color: #e83368;
-    border-width: 5px;
-    border-style: solid;
+    height: 6vh;
+    margin: 0.5vh;
 }
 .inline{
     display: inline-block;
 }
 .licence img{
-    height: 40px;
+    height: 6vh;
 }
 .partenaires{
-    margin-top: 10px;
-}
-
-font{
-    margin: 0;
+    margin-top: 2vh;
 }
