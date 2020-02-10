@@ -2,6 +2,8 @@ body{
     margin-top: 4px;
     margin-left: 1vw;
     background-color: black;
+    font-family: Avenir;
+    color: white;
 
     background-image: url("../img/logo/logo_120_b.png");
     background-position: top 5vw left 11vw;
@@ -22,10 +24,14 @@ ul{
     vertical-align: middle;
     margin: 5px 12px;
     background-color: white;
+    border-color: #e83368;
+    border-width: 5px;
+    border-style: solid;
 }
 .logoecoles img{
-    height: 46px;
+    height: 40px;
 }
+
 
 
 .logoLien img{
@@ -40,7 +46,7 @@ ul{
     margin-top: 1vw;
 }
 .etudiant{
-    margin-top: 3px;
+    margin-top: 2px;
     display: block;
     height: 20px;
 }
@@ -53,11 +59,17 @@ ul{
     display: inline-block;
 }
 .partenaires img{
-    height: 46px;
+    height: 40px;
     background-color: white;
+    border-color: #e83368;
+    border-width: 5px;
+    border-style: solid;
+}
+.inline{
+    display: inline-block;
 }
 .licence img{
-    height: 46px;
+    height: 40px;
 }
 .partenaires{
     margin-top: 10px;
