@@ -50,8 +50,6 @@
     float: left;
     margin: 0 1px 0 0;
     padding: 0;
-    background: #333;
-    color: #ddd;
     text-align: center;
     cursor: pointer;
 }
@@ -60,7 +58,6 @@
     width: 100vw !important;
     height: 100vh !important;
     margin: 0 !important;
-    background-color: white !important;
     text-align: center;
     cursor: pointer;
     position: relative;
@@ -144,20 +141,12 @@ img.persGarconP2:hover {
     height: 100%;
     margin: 0 1px 0 0;
     padding: 0;
-    background: #333;
-    color: #ddd;
     text-align: center;
     cursor: pointer;
 }
 
-.frame ul li.active {
-    color: #fff;
-    background: #333;
-}
-
 body {
-    background-color: black;
-    color: white;
+    background-color: white;
     overflow: hidden;
 }
 
@@ -188,6 +177,34 @@ body {
     left: 0;
     width: 100%;
     height: 20px;
+}
+
+/* Animations */
+.dooranimation {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    position: absolute;
+    visibility: hidden;
+    left: 0;
+    top: 0;
+}
+
+/* Décor */
+#bg-decor{
+    position: absolute;
+    width: 80vw;
+    height: 100vh;
+    left: 10vw;
+    top: 0
+}
+
+.inslide-decor{
+    width: 80vw;
+    height: 100vh;
+    left: 10vw;
+    top: 0;
+    visibility: hidden;
 }
 
 /* Cover */

@@ -20,7 +20,7 @@ jQuery(function($){
             startAt: 0,
             scrollBar: $wrap.find('.scrollbar'),
             scrollBy: 1,
-            speed: 1000,
+            speed: 2500,
             elasticBounds: 1,
             easing: 'easeOutExpo',
             dragHandle: 1,
@@ -30,6 +30,17 @@ jQuery(function($){
             active: function(evt, index) {
                 console.log('Active item : ' + index);
                 console.log(this.items[index].el.classList);
+
+                let select = this.items[index].el.getElementsByClassName("inslide-decor");
+                if (select.length > 0) {
+                    let srcFrom = document.getElementById("bg-decor").getAttribute('src');
+                    let srcTo = select[0].getAttribute('src');
+                    if (srcFrom !== srcTo){
+                        decorTransition(srcFrom, srcTo);
+                    }
+                }
+
+
                 if (this.items[index].el.classList.contains('stop-scroll')) {
                     $frame.sly('set', {
                         scrollBy: 0,

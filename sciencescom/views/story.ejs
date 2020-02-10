@@ -1,63 +1,91 @@
 <!doctype html>
 
 <html lang="fr">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <title>Hyblab 2020 Auden'story</title>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-        <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css/font-awesome.css">
-        <link rel="stylesheet" href="css/style.css">
-        <script type="text/javascript" src="js/modernizr.js"></script>
-        <!-- Nécessité de charger jquery dans le head pour l'affichage de la carte -->
-        <script type="text/javascript" src="js/jquery.min.js"></script>
-        <script type="text/javascript" src="js/typed.js"></script>
-    </head>
-    <body>
+    <title>Hyblab 2020 Auden'story</title>
+
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/modernizr.js"></script>
+    <!-- Nécessité de charger jquery dans le head pour l'affichage de la carte -->
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/typed.js"></script>
+</head>
+
+<body>
 
     <main>
 
         <div class="wrap" style="width: 100vw; margin: 0;">
 
+            <img src="img/decors/decor_now.webp" id="bg-decor">
+            <div id="decor_hider"
+                style="width: 100vw; height: 100vh; left: 0; top: 0; position: absolute; display: none; background-color: white;">
+            </div>
+
+
+            <video class="dooranimation" id="door_now">
+                <source src="vid/door_now.webm" type="video/webm">
+            </video>
+            <video class="dooranimation" id="door_now_rev">
+                <source src="vid/door_now_rev.webm" type="video/webm">
+            </video>
+            <video class="dooranimation" id="door_70s">
+                <source src="vid/door_70s.webm" type="video/webm">
+            </video>
+            <video class="dooranimation" id="door_70s_rev">
+                <source src="vid/door_70s_rev.webm" type="video/webm">
+            </video>
+            <video class="dooranimation" id="door_1900">
+                <source src="vid/door_1900.webm" type="video/webm">
+            </video>
+            <video class="dooranimation" id="door_1900_rev">
+                <source src="vid/door_1900_rev.webm" type="video/webm">
+            </video>
+
             <div class="frame oneperframe" id="oneperframe" style="overflow: hidden; height: 100%;">
-                    <ul class="clearfix">
-                        <%- include('slides/start.ejs') -%>
+                <ul class="clearfix">
+                    <%- include('slides/start.ejs') -%>
 
-                        <%- include('slides/period1/introduction.ejs') -%>
-                        <%- include('slides/period1/testimony1.ejs') -%>
-                        <%- include('slides/period1/testimony2.ejs') -%>
+                    <%- include('slides/period1/introduction.ejs') -%>
+                    <%- include('slides/period1/testimony1.ejs') -%>
+                    <%- include('slides/period1/testimony2.ejs') -%>
 
-                        <%- include('slides/period2/introduction.ejs') -%>
-                        <%- include('slides/period2/testimony1.ejs') -%>
-                        <%- include('slides/period2/testimony2.ejs') -%>
+                    <%- include('slides/period2/introduction.ejs') -%>
+                    <%- include('slides/period2/testimony1.ejs') -%>
+                    <%- include('slides/period2/testimony2.ejs') -%>
 
-                        <%- include('slides/period3/introduction.ejs') -%>
-                        <%- include('slides/period3/testimony1.ejs') -%>
-                        <%- include('slides/period3/testimony2.ejs') -%>
+                    <%- include('slides/period3/introduction.ejs') -%>
+                    <%- include('slides/period3/testimony1.ejs') -%>
+                    <%- include('slides/period3/testimony2.ejs') -%>
 
-                        <%- include('slides/end.ejs') -%>
-                    </ul>
+                    <%- include('slides/end.ejs') -%>
+                </ul>
+            </div>
+
+            <div class="scrollbar" style="width:80%; left: 10%; height: 30px; bottom: 40px; position:fixed;">
+                <div class="handle" style="transform: translateZ(0px) translateX(0px); width: 71px;">
+                    <div class="mousearea"></div>
                 </div>
+            </div>
 
-                <div class="scrollbar" style="width:80%; left: 10%; height: 30px; bottom: 40px; position:fixed;">
-                    <div class="handle" style="transform: translateZ(0px) translateX(0px); width: 71px;">
-                        <div class="mousearea"></div>
-                    </div>
-                </div>
+            <div id="logos">
+                <img src="img/logo/logo_audencia_b.png" class="logo" />
+                <div class="logo-separator"></div>
+                <img src="img/logo/logo_120_b.png" class="logo" />
+            </div>
 
-                <div id="logos">
-                    <img src="img/logo/logo_audencia_b.png" class="logo" />
-                    <div class="logo-separator"></div>
-                    <img src="img/logo/logo_120_b.png" class="logo" />
-                </div>
-
-                <img class="next" src="img/elements/bouton_scroll_bleu.png" style="width: 3vw; right: 4vw; bottom: 3vh; position: fixed;">
-                <div id="mouse-scroll-tip" style="width: 10vw; right: 1vw; bottom: 1vh; position: fixed; display: none;">
-                    <p style="animation: opacityOn 2s linear infinite">Défilez vers le bas pour avancer</p>
-                </div>
+            <img class="next" src="img/elements/bouton_scroll_bleu.png"
+                style="width: 3vw; right: 4vw; bottom: 3vh; position: fixed;">
+            <div id="mouse-scroll-tip" style="width: 10vw; right: 1vw; bottom: 1vh; position: fixed; display: none;">
+                <p style="animation: opacityOn 2s linear infinite">Défilez vers le bas pour avancer</p>
+            </div>
 
         </div>
 
@@ -65,6 +93,7 @@
 
     <script type="text/javascript" src="js/plugins.js"></script>
     <script type="text/javascript" src="js/sly.min.js"></script>
+    <script type="text/javascript" src="js/videoanimation.js"></script>
     <script type="text/javascript" src="data/Personnage.json"></script>
     <script type="text/javascript" src="js/horizontal.js"></script>
     <script type="text/javascript" src="js/map/raphael-min.js"></script>
@@ -72,5 +101,6 @@
     <script type="text/javascript" src="js/map/jquery.mapael-custom.js"></script>
     <script type="text/javascript" src="js/map/world_countries_miller-custom.js"></script>
     <script type="text/javascript" src="js/map/carteInteractive.js"></script>
-    </body>
+</body>
+
 </html>
