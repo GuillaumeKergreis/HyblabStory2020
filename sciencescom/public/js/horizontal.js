@@ -156,7 +156,10 @@ function speak(personne, slide, paragraph= 0) {
         };
         else if (slide === 1) {
             options.onComplete = (self) => {
+                document.getElementById('bg-decor').setAttribute('src', 'img/decors/decor_1900.stripped.webp');
+                document.getElementById('lettre-icon').style.visibility = 'visible';
                 document.getElementById('lettre-icon').classList.add('bounce');
+                document.getElementById('livre-icon').style.visibility = 'visible';
                 document.getElementById('livre-icon').classList.add('bounce');
                 document.getElementById('lettre-icon').addEventListener('click', () => self.destroy());
                 document.getElementById('livre-icon').addEventListener('click', () => self.destroy());
