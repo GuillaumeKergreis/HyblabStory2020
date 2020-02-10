@@ -9,7 +9,7 @@ let Personnage = {
     "dialogues": {
       "0": [
         {
-          "texte": ["Bonjour !^300 je suis Emma.^300 Je suis en Master 1 à Audencia,^150 je peux t’aider?^500"],
+          "texte": ["^1000Bonjour !^300 je suis Emma.^300 Je suis en Master 1 à Audencia,^150 je peux t’aider?^500"],
           "suivant": {"personnage": "Pablo", "slide": "0", "paragraphe": "0"}
         },
         {
@@ -18,7 +18,7 @@ let Personnage = {
       ],
       "1": [
         {
-          "texte": ["Super,^150 on vient d’arriver,^150 pile à l’endroit que je voulais !^500"],
+          "texte": ["^1500Super,^150 on vient d’arriver,^150 pile à l’endroit que je voulais !^500"],
           "suivant": {"personnage": "Pablo", "slide": "1", "paragraphe": "0"}
         },
         {
@@ -26,7 +26,7 @@ let Personnage = {
           "suivant": {"personnage": "Pablo", "slide": "1", "paragraphe": "1"}
         },
         {
-          "texte": ["Mais non,^150 ce sera très instructif tu vas voir.^150 On va commencer au commencement,^300", "lors des premières décennies de l’école,^150 au début du XXème siècle.^300", "Je te laisse choisir à qui tu veux discuter en premier…"]
+          "texte": ["Mais non,^150 ce sera très instructif tu vas voir.^150 On va commencer au commencement,^300", "lors des premières décennies de l’école,^150 au début du XXème siècle.^300", "Je te laisse choisir quel témoignage tu souhaite découvrir…"]
         }
       ],
       "4": [

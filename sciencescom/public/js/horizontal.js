@@ -22,9 +22,10 @@ jQuery(function ($) {
             speed: 2500,
             elasticBounds: 1,
             easing: 'easeOutExpo',
-            dragHandle: 1,
+            dragHandle: 0,
             dynamicHandle: 1,
-            clickBar: 1,
+            clickBar: 0,
+            scrollTrap: 1
         }, {
             active: function(evt, index) {
                 let timeSlider = document.getElementById("timeSlider");
@@ -57,14 +58,15 @@ jQuery(function ($) {
                 else {
                     $frame.sly('set', {
                         scrollBy: 1,
-                        dragHandle: 1,
+                        dragHandle: 0,
                         dynamicHandle: 1,
-                        clickBar: 1,
+                        clickBar: 0,
                         mouseDragging: 1,
                         touchDragging: 1,
                     });
                 }
                 launchSpeech(index);
+                hideInviteToScroll();
             }
             }
         );
@@ -148,17 +150,42 @@ function speak(personne, slide, paragraph= 0) {
                 Personnage[personne].dialogues[slide][paragraph].suivant.paragraphe
             );
         };
-        else if ([0, 3, 4, 6, 7, 9].includes(slide)) options.onComplete = (self) => {
+        else if ([7, 9].includes(slide)) options.onComplete = (self) => {
             self.destroy();
             inviteToScroll();
         };
-        else if (slide === 1 && Personnage[personne].dialogues[slide][paragraph].suivant !== '') {
+        else if (slide === 1) {
             options.onComplete = (self) => {
                 document.getElementById('lettre-icon').classList.add('bounce');
                 document.getElementById('livre-icon').classList.add('bounce');
                 document.getElementById('lettre-icon').addEventListener('click', () => self.destroy());
                 document.getElementById('livre-icon').addEventListener('click', () => self.destroy());
             }
+        }
+        else if (slide === 4) {
+            options.onComplete = (self) => {
+                document.getElementById('alain').classList.add('bounce');
+                document.getElementById('martine').classList.add('bounce');
+                document.getElementById('alain').addEventListener('click', () => self.destroy());
+                document.getElementById('martine').addEventListener('click', () => self.destroy());
+            }
+        }
+        else if (slide === 5) {
+            options.onComplete = (self) => {
+                document.getElementById('martineNext').classList.add('bounce');
+                document.getElementById('martineNext').addEventListener('click', () => self.destroy());
+                inviteToScroll();
+            }
+        }
+        else if (slide === 6) {
+            options.onComplete = (self) => {
+                document.getElementById('alainNext').classList.add('bounce');
+                document.getElementById('alainNext').addEventListener('click', () => self.destroy());
+                inviteToScroll();
+            }
+        }
+        else if (slide === 0) {
+            inviteToScroll();
         }
         else options.onComplete = (self) => self.destroy();
 
@@ -168,4 +195,8 @@ function speak(personne, slide, paragraph= 0) {
 
 function inviteToScroll() {
     document.getElementById('mouse-scroll-tip').style.display = 'inline';
+}
+
+function hideInviteToScroll() {
+    document.getElementById('mouse-scroll-tip').style.display = 'none';
 }

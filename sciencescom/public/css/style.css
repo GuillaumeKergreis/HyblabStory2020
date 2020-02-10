@@ -73,54 +73,29 @@
     overflow: hidden;
 }
 
-@keyframes persFilleP2 {
-    from {
-        width: 7.8vw
-    }
-    50% {
-        width: 8.2vw
-    }
-    to {
-        width: 7.8vw
-    }
+/* Bounce */
+#livre-icon, #martine {
+    animation-delay: 1s;
 }
-
-@keyframes persGarconP2 {
-    from {
-        width: 11vw;
-    }
-    50% {
-        width: 11.3vw
-    }
-    to {
-        width: 11vw;
-    }
+.bounce {
+    transition: transform 0.5s ease;
+    animation-name: bounce;
+    animation-timing-function: ease;
+    align-self: flex-end;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    transform-origin: bottom;
 }
-
-img.persFilleP2 {
-    animation: persFilleP2 2s infinite;
-    width: 7.8vw;
-    position: absolute;
-    left: 70vw;
-    bottom: 5vw;
-}
-
-img.persFilleP2:hover {
+.bounce:hover {
+    transform: scale(1.2);
     animation: none;
-    width: 9vw;
 }
-
-img.persGarconP2 {
-    animation: persGarconP2 2s infinite;
-    width: 11vw;
-    position: absolute;
-    left: 57vw;
-    bottom: 5vw;
-}
-
-img.persGarconP2:hover {
-    animation: none;
-    width: 13vw;
+@keyframes bounce {
+    0%   { transform: scale(1,1)}
+    10%  { transform: scale(1.1,.9)}
+    30%  { transform: scale(.9,1.1)}
+    50%  { transform: scale(1,1)}
+    100% { transform: scale(1,1)}
 }
 
 /* ------- Important ! Regardez bien à la fin de ce CSS pour des règles permettant de ----------- */
