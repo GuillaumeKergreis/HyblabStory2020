@@ -367,3 +367,62 @@ body {
 #credits:hover {
     color: #DD4C73;
 }
+/* Entrée des personnages */
+
+
+@keyframes animPersoLeft {
+    from {left: -15vw;}
+    to {left: 32vw;}
+}
+
+@keyframes animPersoRight {
+    from {left: 100vw;}
+    to {left: 54.3vw;}
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.persoLeft{
+    height: 27vw;
+    left: -15vw;
+    bottom: 4.5vw;
+    transform: scaleX(-1);
+    animation-name: animPersoLeft;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+}
+
+.persoRight{
+    height: 27vw;
+    left: 100vw;
+    bottom: 3.7vw;
+    animation-name: animPersoRight;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-fill-mode: none;
+}
+
+.disappearAfter6s{
+    animation: disappear 6s steps(1, end) forwards;
+}
+
+.appearAfter6s{
+    animation: appear 6s steps(1, end) forwards;
+}
