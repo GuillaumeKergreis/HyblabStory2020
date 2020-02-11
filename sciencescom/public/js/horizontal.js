@@ -124,6 +124,11 @@ function launchSpeech(index) {
         case 10:
             speak('Emma', index, 2);
             break;
+        case 0:
+            setTimeout(function () {
+                speak('Emma', index);
+            }, 6000);
+            break;
         default:
             speak('Emma', index);
             break;
