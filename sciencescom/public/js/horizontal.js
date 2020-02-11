@@ -29,7 +29,7 @@ jQuery(function ($) {
         }, {
             active: function(evt, index) {
                 let timeSlider = document.getElementById("timeSlider");
-                let moveSliderIndexes = [0, 1, 4, 7, 8];
+                let moveSliderIndexes = [0, 1, 4, 7, 10];
 
                 if (moveSliderIndexes.includes(index)) {
                     timeSlider.value = moveSliderIndexes.indexOf(index);
