@@ -29,12 +29,15 @@ jQuery(function ($) {
         }, {
             active: function(evt, index) {
                 let timeSlider = document.getElementById("timeSlider");
-                let moveSliderIndexes = [0, 1, 4, 7, 8];
+                let moveSliderIndexes = [0, 1, 4, 7, 10];
 
                 if (moveSliderIndexes.includes(index)) {
                     timeSlider.value = moveSliderIndexes.indexOf(index);
                 }
+                
+                let isKeySlide = false;
 
+                /* Animation vidéo transition époque */
                 let select = this.items[index].el.getElementsByClassName("inslide-decor");
                 if (select.length > 0) {
                     let srcFrom = document.getElementById("bg-decor").getAttribute('src');
@@ -42,6 +45,15 @@ jQuery(function ($) {
                     if (srcFrom !== srcTo){
                         decorTransition(srcFrom, srcTo);
                     }
+                }
+
+                /* Animation entrée slide clé */
+                select = this.items[index].el.getElementsByClassName('key-slide-content');
+                if (select.length > 0) {
+                    isKeySlide = true;
+                    setTimeout(function () {
+                        $(select[0]).fadeIn(2000);
+                    }, 2300);
                 }
 
 
@@ -65,7 +77,14 @@ jQuery(function ($) {
                         touchDragging: 1,
                     });
                 }
-                launchSpeech(index);
+                if(isKeySlide){
+                    setTimeout(function () {
+                        launchSpeech(index);
+                    }, 4000);
+                }
+                else{
+                    launchSpeech(index);
+                }
                 hideInviteToScroll();
             }
             }
@@ -119,7 +138,7 @@ function launchSpeech(index) {
  */
 function speak(personne, slide, paragraph= 0) {
     slide = parseInt(slide);
-    if (![2, 3].includes(slide)) {
+    if (![2, 3, 8, 9].includes(slide)) {
         if (slide === 1) {
             document.getElementById('textBox' + slide).src = Personnage[personne].boite_dialogue_periode_1;
         } else if ([4, 5, 6].includes(slide) && personne === 'Emma') {
@@ -150,10 +169,9 @@ function speak(personne, slide, paragraph= 0) {
                 Personnage[personne].dialogues[slide][paragraph].suivant.paragraphe
             );
         };
-        else if ([7, 9].includes(slide)) options.onComplete = (self) => {
-            self.destroy();
+        else if (slide === 0) {
             inviteToScroll();
-        };
+        }
         else if (slide === 1) {
             options.onComplete = (self) => {
                 document.getElementById('lettre-icon').classList.add('bounce');
@@ -184,13 +202,24 @@ function speak(personne, slide, paragraph= 0) {
                 inviteToScroll();
             }
         }
-        else if (slide === 0) {
-            inviteToScroll();
+        else if (slide === 7) {
+            options.onComplete = (self) => {
+                document.getElementById('video-icon').classList.add('bounce');
+                document.getElementById('carte-icon').classList.add('bounce');
+                document.getElementById('video-icon').addEventListener('click', () => self.destroy());
+                document.getElementById('carte-icon').addEventListener('click', () => self.destroy());
+                document.getElementById('Emma-slide-7').style.transform = 'scaleX(-1)';
+            }
+        }
+        else if (slide === 10) {
+            showCreditLink();
+            hideInviteToScroll();
         }
         else options.onComplete = (self) => self.destroy();
 
         new Typed('#textBoxTyped' + slide, options);
     }
+    else inviteToScroll();
 }
 
 function inviteToScroll() {
@@ -199,4 +228,8 @@ function inviteToScroll() {
 
 function hideInviteToScroll() {
     document.getElementById('mouse-scroll-tip').style.display = 'none';
+}
+
+function showCreditLink() {
+    document.getElementById('credits').style.opacity = '1';
 }

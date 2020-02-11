@@ -7,7 +7,17 @@ function getAndConfigureVideo(id){
 }
 
 function decorTransitionPeriod(periodFrom, periodTo) {
-    var $video = getAndConfigureVideo('door_' + periodFrom);
+    let periodFromForVideo = periodFrom;
+    if(periodFrom === 'nowend'){
+        periodFromForVideo = 'now'
+    }
+
+    let periodToForVideo = periodTo;
+    if(periodTo === 'nowend'){
+        periodToForVideo = 'now'
+    }
+
+    var $video = getAndConfigureVideo('door_' + periodFromForVideo);
 
     $video.play();
     $("#decor_hider").fadeIn(1000);
@@ -15,9 +25,8 @@ function decorTransitionPeriod(periodFrom, periodTo) {
         document.getElementById("bg-decor").setAttribute('src', 'img/decors/decor_' + periodTo + '.webp');
     }, 1200);
 
-
-    $video.addEventListener('ended', () => {
-        var $nextvideo = getAndConfigureVideo('door_' + periodTo + '_rev');
+    setTimeout(function () {
+        var $nextvideo = getAndConfigureVideo('door_' + periodToForVideo + '_rev');
 
         $video.style.visibility = "hidden";
 
@@ -29,8 +38,7 @@ function decorTransitionPeriod(periodFrom, periodTo) {
         $nextvideo.addEventListener('ended', () => {
             $nextvideo.style.visibility = "hidden";
         }, false);
-
-    }, false);
+    }, 500);
 }
 
 
