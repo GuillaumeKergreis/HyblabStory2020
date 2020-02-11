@@ -65,15 +65,15 @@ let Personnage = {
           "suivant": {"personnage": "Emma", "slide": "10", "paragraphe": "2"}
         },
         {
-          "texte": ["Donc voilà, maintenant tu en sais un peu plus sur l’histoire d’Audencia ! Alors, ça t’a plu?"],
+          "texte": ["^1500Donc voilà,^150 maintenant tu en sais un peu plus sur l’histoire d’Audencia !^300 Alors, ça t’a plu?^500"],
           "suivant": {"personnage": "Pablo", "slide": "10", "paragraphe": "1"}
         },
         {
-          "texte": ["J’en suis ravie ! J’espère que ça t’a motivé pour nous rejoindre l’année prochaine !"],
+          "texte": ["J’en suis ravie !^300 J’espère que ça t’a motivé pour nous rejoindre l’année prochaine !^500"],
           "suivant": {"personnage": "Pablo", "slide": "10", "paragraphe": "2"}
         },
         {
-          "texte": ["Super ! Bonne chance alors et à bientôt !"]
+          "texte": ["Super !^300 Bonne chance alors et à bientôt !^300"]
         }
       ]
     }
@@ -167,11 +167,11 @@ let Personnage = {
           "suivant": {"personnage": "Emma", "slide": "10", "paragraphe": "1"}
         },
         {
-          "texte": ["Oui ! Je dois dire, je suis plutôt impressionné ! Je ne pensais pas qu’il y aurait autant d’histoire pour cette école !"],
+          "texte": ["Oui !^150 Je dois dire que je suis plutôt impressionné !^300", "Je ne pensais pas qu’il y aurait autant d’histoire pour cette école !^500"],
           "suivant": {"personnage": "Emma", "slide": "10", "paragraphe": "3"}
         },
         {
-          "texte": ["Évidemment ! J’ai hâte maintenant !"],
+          "texte": ["Évidemment !^150 J’ai hâte maintenant !^500"],
           "suivant": {"personnage": "Emma", "slide": "10", "paragraphe": "4"}
         }
       ]

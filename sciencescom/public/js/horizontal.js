@@ -150,10 +150,9 @@ function speak(personne, slide, paragraph= 0) {
                 Personnage[personne].dialogues[slide][paragraph].suivant.paragraphe
             );
         };
-        else if ([9].includes(slide)) options.onComplete = (self) => {
-            self.destroy();
+        else if (slide === 0) {
             inviteToScroll();
-        };
+        }
         else if (slide === 1) {
             options.onComplete = (self) => {
                 document.getElementById('lettre-icon').classList.add('bounce');
@@ -193,8 +192,9 @@ function speak(personne, slide, paragraph= 0) {
                 document.getElementById('Emma-slide-7').style.transform = 'scaleX(-1)';
             }
         }
-        else if (slide === 0) {
-            inviteToScroll();
+        else if (slide === 10) {
+            showCreditLink();
+            hideInviteToScroll();
         }
         else options.onComplete = (self) => self.destroy();
 
@@ -209,4 +209,8 @@ function inviteToScroll() {
 
 function hideInviteToScroll() {
     document.getElementById('mouse-scroll-tip').style.display = 'none';
+}
+
+function showCreditLink() {
+    document.getElementById('credits').style.opacity = '1';
 }
