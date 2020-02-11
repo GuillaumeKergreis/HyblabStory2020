@@ -7,7 +7,17 @@ function getAndConfigureVideo(id){
 }
 
 function decorTransitionPeriod(periodFrom, periodTo) {
-    var $video = getAndConfigureVideo('door_' + periodFrom);
+    let periodFromForVideo = periodFrom;
+    if(periodFrom === 'nowend'){
+        periodFromForVideo = 'now'
+    }
+
+    let periodToForVideo = periodTo;
+    if(periodTo === 'nowend'){
+        periodToForVideo = 'now'
+    }
+
+    var $video = getAndConfigureVideo('door_' + periodFromForVideo);
 
     $video.play();
     $("#decor_hider").fadeIn(1000);
@@ -17,7 +27,7 @@ function decorTransitionPeriod(periodFrom, periodTo) {
 
 
     $video.addEventListener('ended', () => {
-        var $nextvideo = getAndConfigureVideo('door_' + periodTo + '_rev');
+        var $nextvideo = getAndConfigureVideo('door_' + periodToForVideo + '_rev');
 
         $video.style.visibility = "hidden";
 
