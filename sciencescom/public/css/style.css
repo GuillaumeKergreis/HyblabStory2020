@@ -183,7 +183,7 @@ body {
     height: 100%;
     object-fit: fill;
     position: absolute;
-    visibility: hidden;
+    display: none;
     left: 0;
     top: 0;
 }

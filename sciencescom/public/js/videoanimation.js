@@ -2,22 +2,12 @@ function getAndConfigureVideo(id){
     let video = document.getElementById(id);
     video.playbackRate = 0.5;
     video.currentTime = 0;
-    video.style.visibility = "visible";
+    $(video).show();
     return(video)
 }
 
 function decorTransitionPeriod(periodFrom, periodTo) {
-    let periodFromForVideo = periodFrom;
-    if(periodFrom === 'nowend'){
-        periodFromForVideo = 'now'
-    }
-
-    let periodToForVideo = periodTo;
-    if(periodTo === 'nowend'){
-        periodToForVideo = 'now'
-    }
-
-    var $video = getAndConfigureVideo('door_' + periodFromForVideo);
+    let $video = getAndConfigureVideo('door_' + periodFrom);
 
     $video.play();
     $("#decor_hider").fadeIn(1000);
@@ -26,19 +16,20 @@ function decorTransitionPeriod(periodFrom, periodTo) {
     }, 1200);
 
     setTimeout(function () {
-        var $nextvideo = getAndConfigureVideo('door_' + periodToForVideo + '_rev');
+        let $nextvideo = getAndConfigureVideo('door_' + periodTo + '_rev');
 
-        $video.style.visibility = "hidden";
+        $($video).hide();
 
         $nextvideo.play();
-        setTimeout(function () {
-            $("#decor_hider").fadeOut(1000);
-        }, 1000);
 
         $nextvideo.addEventListener('ended', () => {
-            $nextvideo.style.visibility = "hidden";
+            $($nextvideo).hide();
         }, false);
     }, 500);
+
+    setTimeout(function () {
+        $("#decor_hider").fadeOut(1000);
+    }, 1500);
 }
 
 
