@@ -167,6 +167,14 @@ body {
     cursor: pointer;
 }
 
+.slider::-webkit-slider-thumb::before {
+  content : "2020";
+  position:fixed;
+  top:-200px;
+  bottom:-10px;
+  z-index: 1000;
+}
+
 .slider::-moz-range-thumb {
     width: 2.5vh;
     height: 2.5vh;
